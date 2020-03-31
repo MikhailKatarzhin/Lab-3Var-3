@@ -217,12 +217,10 @@ int main()
                     addSomeCar(&cars, &countOfCar);
                     break;
                 case 7:
-                    ++ cars[i-1];
-                    //cars[i-1] ++;
+                    (++ cars[i-1]) ++;
                     break;
                 case 8:
-                    //-- cars[i-1];
-                    --cars[i-1];
+                    (--cars[i-1]) --;
                     break;
                 case 9:
                     short y;
