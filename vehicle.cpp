@@ -1,37 +1,68 @@
-#include "vehicle.h"
+#include "Vehicle.h"
 
-    void vehicle :: setMovementSpeed(int const movementSpeed)
+/// ///////////////////////////////////////////////////////////////////////////////
+/// Методы
+
+    void Vehicle::setMovementSpeed(int const movementSpeed)
     {
         this -> movementSpeed = (int)movementSpeed;
     }
-    void vehicle :: setMovementSpeed(short int const movementSpeed)
+    void Vehicle::setMovementSpeed(short int const movementSpeed)
     {
         this -> movementSpeed = (int)movementSpeed;
     }
-    void vehicle :: setMovementSpeed(unsigned int const movementSpeed)
+    void Vehicle::setMovementSpeed(unsigned int const movementSpeed)
     {
         this -> movementSpeed = (int)movementSpeed;
     }
-    void vehicle :: setMovementSpeed(unsigned short int const movementSpeed)
+    void Vehicle::setMovementSpeed(unsigned short int const movementSpeed)
     {
         this -> movementSpeed = (int)movementSpeed;
     }
 
-    int vehicle :: getMovementSpeed() const
+    int Vehicle::getMovementSpeed() const
     {
         return movementSpeed;
     }
 
-    void vehicle :: setPlaceCount(unsigned int const placeCount)
+    void Vehicle::setPlaceCount(unsigned int const placeCount)
     {
         this -> placeCount = (unsigned int)placeCount;
     }
-    void vehicle :: setPlaceCount(unsigned short int const placeCount)
+    void Vehicle::setPlaceCount(unsigned short int const placeCount)
     {
         this -> placeCount = (unsigned int)placeCount;
     }
 
-    unsigned int vehicle :: getPlaceCount() const
+    unsigned int Vehicle::getPlaceCount() const
     {
         return placeCount;
+    }
+
+/// ///////////////////////////////////////////////////////////////////////////////
+/// Перегруженные операторы
+
+    Vehicle& Vehicle::operator ++()
+    {
+        this->movementSpeed += 20;
+        return *this;
+    }
+
+    Vehicle& Vehicle::operator ++(int)
+    {
+        this->placeCount +=2;
+        return *this;
+    }
+
+    Vehicle& Vehicle::operator --()
+    {
+        this->movementSpeed -= 20;
+        return *this;
+    }
+
+    Vehicle& Vehicle::operator --(int)
+    {
+        if (this->placeCount > 2)
+        this->placeCount -=2;
+        return *this;
     }

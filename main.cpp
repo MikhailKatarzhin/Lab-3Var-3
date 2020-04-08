@@ -1,30 +1,18 @@
 #include <iostream>
+#include <stdio.h>
 #include <sstream>
 #include <string>
 #include <string.h>
 #include <stdlib.h>
 #include "Car.h"
-#include <stdio.h>
+#include "autobus.h"
+#include "steamboat.h"
+#include "aeroplane.h"
 
 #define min(left, right) (left < right ? left : right)
 #define max(left, right) (left > right ? left : right)
 
 using namespace std;
-
-void showMenu()
-{
-    cout << "\n\t\t\t***Menu***" << endl;
-    cout << "\t0)Menu up" << endl;
-    cout << "\t1)Set model of car" << endl;
-    cout << "\t2)Set speed of car" << endl;
-    cout << "\t3)Set color of car" << endl;
-    cout << "\t4)Create a duplicate of this car" << endl;
-    cout << "\t5)Delete this car" << endl;
-    cout << "\t6)Add some cars" << endl;
-    cout << "\t7)Upgrade car" << endl;
-    cout << "\t8)Downgrade car" << endl;
-    cout << "\t9)Battle between cars!!!" << endl;
-}
 
 void showAllCars(short countOfCar, Car const * const cars)
 {
@@ -142,16 +130,11 @@ void addSomeCar(Car ** cars, short * const countOfCar)
         {
             cout << "\nCar #" << *(countOfCar)-addCount+1 << " \n|| Model ||\t|| Speed ||\t|| Color ||" << endl;
             cin >> cars[0][*(countOfCar)-addCount];
-            if((cars[0][*(countOfCar)-addCount].getMovementSpeed() > 0)&&
-               ((cars[0][*(countOfCar)-addCount].getModel() == "Normal")||
-                (cars[0][*(countOfCar)-addCount].getModel() == "Rarity")||
-                (cars[0][*(countOfCar)-addCount].getModel() == "Epic")||
-                (cars[0][*(countOfCar)-addCount].getModel() == "Legendary")||
-                (cars[0][*(countOfCar)-addCount].getModel() == "Mythical")))
+            if(cars[0][*(countOfCar)-addCount].getMovementSpeed() > 0)
             {
                 break;
             }else{
-                cout << "\nInvalid input, repeat..." << endl;
+                cout << "\nInvalid input speed, repeat..." << endl;
             }
         }
     }
@@ -159,7 +142,8 @@ void addSomeCar(Car ** cars, short * const countOfCar)
 
 int main()
 {
-    short countOfCar = 1, i = 0;
+    short countOfCar = 1;
+    short i = 0;
     Car *cars = new Car[1];
     while (countOfCar)
     {
@@ -177,7 +161,7 @@ int main()
         {
             system("cls");
             cout << "\nYou are working with car #" << i << "\t" << cars[i-1] << endl; ///Падает тут
-            showMenu();
+            cars[i-1].showMenuActions();
             short var;
             string buffer;
             cin >> buffer;
@@ -228,18 +212,19 @@ int main()
                         cout << "\nSelect enemy for battle(to " << countOfCar <<"): ";
                         cin >> y;
                     }while ((y < 0)||(y > countOfCar));
-                    if (cars[i-1] < cars[y-1])
+                    if ((cars[i-1]).getMovementSpeed() < cars[y-1].getMovementSpeed())
                     {
                         system("cls");
                         cout << "\n\n\t!!!Win car... IN RIGHT CONNER!!!" << endl;
                         system("pause");
                         ++cars[y-1];
+                        cars[y-1]++;
                         cars[i-1] = cars[countOfCar-1];
                         cars = resizeCars(cars, countOfCar, countOfCar-1);
                         //resizeCars(&cars, countOfCar, countOfCar-1);
                         --countOfCar;
                     }else{
-                        if (cars[i-1] == cars[y-1])
+                        if (cars[i-1].getMovementSpeed()== cars[y-1].getMovementSpeed())
                         {
                             system("cls");
                             cout << "\n\n\tWin car... No, no winner... Both rivals fell.." << endl;
@@ -247,7 +232,7 @@ int main()
                             --cars[i-1];
                             --cars[y-1];
                         }else{
-                            if (cars[i-1] > cars[y-1])
+                            if (cars[i-1].getMovementSpeed() > cars[y-1].getMovementSpeed())
                             {
                                 system("cls");
                                 cout << "\n\n\n\t\t!!!Win car... IN LEFT CONNER!!!" << endl;
