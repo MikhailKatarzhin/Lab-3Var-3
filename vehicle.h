@@ -32,6 +32,7 @@ public:
     void setPlaceCount(unsigned int const placeCount);
     void setPlaceCount(unsigned short int const placeCount);
     unsigned int getPlaceCount() const;
+    VehicleType getVehicleType()const;
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженные операторы

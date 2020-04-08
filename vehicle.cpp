@@ -39,6 +39,11 @@
         return placeCount;
     }
 
+    VehicleType Vehicle::getVehicleType() const
+    {
+        return type;
+    }
+
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженные операторы
 
