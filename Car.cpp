@@ -7,6 +7,7 @@
 using namespace std;
     Car::Car()
     {
+        type = CAR;
         setBrandname("___");
         setModel("Model#0");
         setColor("UNKNOWN");
@@ -21,6 +22,7 @@ using namespace std;
                , int const movementSpeed_in
                , int const placeCount_in)
     {
+        type = CAR;
         this -> brandname = *(brandname_in);
         this -> model = *(model_in);
         this -> color = *(color_in);
@@ -31,6 +33,7 @@ using namespace std;
 
     Car::Car(Car const &otherCar)
     {
+        type = CAR;
         this -> brandname = otherCar.brandname;
         this -> model = otherCar.model;
         this -> color = otherCar.color;

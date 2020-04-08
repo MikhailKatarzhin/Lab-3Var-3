@@ -1,6 +1,47 @@
 #include "aeroplane.h"
 
 /// ///////////////////////////////////////////////////////////////////////////////
+/// Конструкторы
+
+    Aeroplane::Aeroplane()
+    {
+        type = AEROPLANE;
+        setModel("Model#0");
+        setColor("UNKNOWN");
+        setPlaceCount(defaultPlaceCount);
+        setMovementSpeed(defaultMovementSpeed);
+        setFlight_Hours(0);
+        ///cout << "\nConstruction... " << this;    ///лог о создании
+    }
+
+    Aeroplane::Aeroplane(
+                string const * const model_in,
+                string const * const color_in,
+                int const movementSpeed_in,
+                int const placeCount_in,
+                int const flight_hours)
+    {
+        type = AEROPLANE;
+        this -> model = *(model_in);
+        this -> color = *(color_in);
+        this -> movementSpeed = movementSpeed_in;
+        this -> placeCount = placeCount_in;
+        this -> flight_hours = flight_hours;
+        ///cout << "\nConstruction... " << this;    ///лог о создании
+    }
+
+    Aeroplane::Aeroplane(Aeroplane const &otherAeroplane)
+    {
+        type = AEROPLANE;
+        this -> model = otherAeroplane.model;
+        this -> color = otherAeroplane.color;
+        this -> movementSpeed = otherAeroplane.movementSpeed;
+        this -> placeCount = otherAeroplane.placeCount;
+        this -> flight_hours = otherAeroplane.flight_hours;
+        ///cout << "\nConstruction copy... " << this;   ///лог о создании
+    }
+
+/// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
     void Aeroplane::showMenuActions() {}

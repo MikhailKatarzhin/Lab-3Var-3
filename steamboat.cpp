@@ -1,6 +1,47 @@
 #include "Steamboat.h"
 
 /// ///////////////////////////////////////////////////////////////////////////////
+/// Конструкторы
+
+    Steamboat::Steamboat()
+    {
+        type = STEAMBOAT;
+        setModel("Model#0");
+        setColor("UNKNOWN");
+        setPlaceCount(defaultPlaceCount);
+        setMovementSpeed(defaultMovementSpeed);
+        setTonnage(0);
+        ///cout << "\nConstruction... " << this;    ///лог о создании
+    }
+
+    Steamboat::Steamboat(
+                string const * const model_in,
+                string const * const color_in,
+                int const movementSpeed_in,
+                int const placeCount_in,
+                int const tonnage)
+    {
+        type = STEAMBOAT;
+        this -> model = *(model_in);
+        this -> color = *(color_in);
+        this -> movementSpeed = movementSpeed_in;
+        this -> placeCount = placeCount_in;
+        this -> tonnage = tonnage;
+        ///cout << "\nConstruction... " << this;    ///лог о создании
+    }
+
+    Steamboat::Steamboat(Steamboat const &otherSteamboat)
+    {
+        type = STEAMBOAT;
+        this -> model = otherSteamboat.model;
+        this -> color = otherSteamboat.color;
+        this -> movementSpeed = otherSteamboat.movementSpeed;
+        this -> placeCount = otherSteamboat.placeCount;
+        this -> tonnage = otherSteamboat.tonnage;
+        ///cout << "\nConstruction copy... " << this;   ///лог о создании
+    }
+
+/// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
     void Steamboat::showMenuActions() {}

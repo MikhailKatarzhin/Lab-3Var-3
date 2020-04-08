@@ -1,6 +1,18 @@
 #pragma once
 using namespace std;
 
+/// ///////////////////////////////////////////////////////////////////////////////
+/// Перечисление типов транспортных средств
+
+enum VehicleType
+{
+    UNKNOWN,
+    CAR,
+    AUTOBUS,
+    AEROPLANE,
+    STEAMBOAT
+};
+
 class Vehicle
 {
 public:
@@ -30,6 +42,7 @@ public:
     Vehicle& operator --(int);
 
 protected:
+    VehicleType type;
     int movementSpeed;
     unsigned int placeCount;
 };

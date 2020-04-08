@@ -8,6 +8,7 @@ using namespace std;
 
     Autobus::Autobus()
     {
+        type = AUTOBUS;
         setBrandname("___");
         setModel("Model#0");
         setColor("UNKNOWN");
@@ -22,6 +23,7 @@ using namespace std;
                , int const movementSpeed_in
                , int const placeCount_in)
     {
+        type = AUTOBUS;
         this -> brandname = *(brandname_in);
         this -> model = *(model_in);
         this -> color = *(color_in);
@@ -32,6 +34,7 @@ using namespace std;
 
     Autobus::Autobus(Autobus const &otherAutobus)
     {
+        type = AUTOBUS;
         this -> brandname = otherAutobus.brandname;
         this -> model = otherAutobus.model;
         this -> color = otherAutobus.color;
