@@ -158,3 +158,11 @@
         cin >> tmpModel;
         vehicle->setModel( &tmpModel );
     }
+
+    void changeColor( Vehicle * const vehicle )
+    {
+        cout << "\nEntry the color of the car:\t";
+        string tmpColor;
+        cin >> tmpColor;
+        vehicle->setColor( tmpColor );
+    }

@@ -15,13 +15,6 @@
 
 using namespace std;
 
-void changeCarColor( Car * const car )
-{
-    cout << "\nEntry the color of the car:\t";
-    string tmpColor;
-    cin >> tmpColor;
-    car->setColor( tmpColor );
-}
 
 void resizeCars( Car ** cars, short const size, short const newSize )
 {
@@ -133,7 +126,7 @@ int main()
                     break;
                 case 3:
                     system( "cls" );
-                    changeCarColor( &cars[i-1] );
+                    changeColor( &vehicles[CAR][i-1] );
                     break;
                 case 4:{
                     cars = resizeCars( cars, countOfCar, countOfCar+1 );

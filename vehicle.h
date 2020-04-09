@@ -67,3 +67,4 @@ protected:
 void    changeMovementSpeed( Vehicle * const vehicle );
 void    changePlaceCount( Vehicle * const vehicle );
 void    changeModel( Vehicle * const vehicle );
+void    changeColor( Vehicle * const vehicle );
