@@ -46,6 +46,20 @@ using namespace std;
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
+    void Autobus::showMenuActions()
+{
+    cout << "\n\t\t\t***Menu***" << endl;
+    cout << "\t0)Menu up" << endl;
+    cout << "\t1)Set model of autobus" << endl;
+    cout << "\t2)Set speed of autobus" << endl;
+    cout << "\t3)Set color of autobus" << endl;
+    cout << "\t4)Create a duplicate of this autobus" << endl;
+    cout << "\t5)Delete this autobus" << endl;
+    cout << "\t6)Add some autobus" << endl;
+    cout << "\t7)Upgrade autobus" << endl;
+    cout << "\t8)Downgrade autobus" << endl;
+    cout << "\t9)Battle between autobuses!!!" << endl;
+}
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженые операторы

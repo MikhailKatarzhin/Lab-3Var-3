@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <sstream>
 #include "wheeled_vehicle.h"
 
 using namespace std;
@@ -26,3 +27,7 @@ protected:
 private:
 
 };
+
+void    showAllCars( short countOfCar, Car const * const cars );
+short   requestNumberOfCar( short const countOfCar );
+void    changeCarModel( Car * const car );

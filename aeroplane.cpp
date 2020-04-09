@@ -44,8 +44,6 @@
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Ìועמהû
 
-    void Aeroplane::showMenuActions() {}
-
     void Aeroplane::print() const
     {
        std::cout
@@ -57,6 +55,21 @@
            << "\t||"
         ;
     }
+
+    void Aeroplane::showMenuActions() const
+{
+    cout << "\n\t\t\t***Menu***" << endl;
+    cout << "\t0)Menu up" << endl;
+    cout << "\t1)Set model of aeroplane" << endl;
+    cout << "\t2)Set speed of aeroplane" << endl;
+    cout << "\t3)Set color of aeroplane" << endl;
+    cout << "\t4)Create a duplicate of this aeroplane" << endl;
+    cout << "\t5)Delete this aeroplane" << endl;
+    cout << "\t6)Add some aeroplanes" << endl;
+    cout << "\t7)Upgrade aeroplane" << endl;
+    cout << "\t8)Downgrade aeroplane" << endl;
+    cout << "\t9)Battle between aeroplanes!!!" << endl;
+}
 
     void Aeroplane::setModel(string const * const model_in)
     {

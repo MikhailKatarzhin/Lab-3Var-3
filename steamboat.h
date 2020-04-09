@@ -18,7 +18,7 @@ public:
 /// Ìועמהû
 
     void print() const;
-    void showMenuActions();
+    void showMenuActions() const;
     void setModel(string const * const model_in);
     void setModel(string const model_in);
     void setColor(string const * const color_in);

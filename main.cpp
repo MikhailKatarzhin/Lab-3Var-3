@@ -1,6 +1,5 @@
 #include <iostream>
 #include <stdio.h>
-#include <sstream>
 #include <string>
 #include <string.h>
 #include <stdlib.h>
@@ -14,39 +13,12 @@
 
 using namespace std;
 
-void showAllCars( short countOfCar, Car const * const cars )
-{
-    for (short i = 0; i < countOfCar; i++)
-    {
-        cout << "\n" << i+1 << ")";
-        cars[i].print();
-    }
-}
 
-short requestNumberOfCar( short const countOfCar )
-{
-    short i;
-    do{
-        cout << "\n\nEntry number of car(to " << countOfCar << ") or close program(input 0)\n" << endl;
-        string buffer;
-        cin >> buffer;
-        istringstream bufferStream(buffer);
-        bufferStream >> i;
-    }while( ( i < 0 )||( i > countOfCar ) );
-    return i;
-}
 
-void changeCarModel( Car * const car )
-{
-    string tmpModel;
-    cout << "\nEntry model of car (Normal, Rarity, Epic, Legendary, Mythical):\t";
-    cin >> tmpModel;
-    car->setModel( &tmpModel );
-}
 
 void changeCarSpeed( Car * const car )
 {
-    short tmpSpeed;
+    short   tmpSpeed;
     while(1)
     {
         cout << "\nEntry speed of car(more than 0):\t";
@@ -96,7 +68,7 @@ Car* resizeCars( Car const * const cars, short const size, short const newSize )
 
 void addSomeCar( Car ** cars, short * const countOfCar )
 {
-    short addCount = 0;
+    short   addCount = 0;
     while( addCount < 1 )
     {
         cout << "How many car add in database?" << endl;
@@ -133,8 +105,17 @@ void addSomeCar( Car ** cars, short * const countOfCar )
 
 int main()
 {
-    short countOfCar = 1;
-    short i = 0;
+
+    short   countOfCar = 1;
+    short   countOfAutobus = 0;
+    short   countOfAeroplane = 0;
+    short   countOfSteamboat = 0;
+    short   i = 0;
+    Vehicle ** vehicles = new Vehicle*[4];
+    vehicles[0] = new Car[countOfCar];
+    vehicles[1] = new Autobus[countOfAutobus];
+    vehicles[2] = new Aeroplane[countOfAeroplane];
+    vehicles[3] = new Steamboat[countOfSteamboat];
     Car *cars = new Car[1];
     while( countOfCar )
     {
