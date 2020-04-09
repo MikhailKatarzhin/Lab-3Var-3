@@ -71,37 +71,9 @@
     cout << "\t9)Battle between aeroplanes!!!" << endl;
 }
 
-    void Aeroplane::setModel(string const * const model_in)
-    {
-        this -> model = *model_in;
-    }
-    void Aeroplane::setModel(string const model_in)
-    {
-        this -> model = model_in;
-    }
-
-    void Aeroplane::setColor(string const * const color_in)
-    {
-        this -> color = *color_in;
-    }
-    void Aeroplane::setColor(string const color_in)
-    {
-        this -> color = color_in;
-    }
-
     void Aeroplane::setFlight_Hours(int const flight_hours_in)
     {
         this -> flight_hours = flight_hours_in;
-    }
-
-    string& Aeroplane::getModel()
-    {
-        return model;
-    }
-
-    string& Aeroplane::getColor()
-    {
-        return color;
     }
 
     int Aeroplane::getFlight_Hours()

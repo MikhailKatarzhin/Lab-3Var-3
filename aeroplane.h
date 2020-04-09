@@ -17,16 +17,10 @@ public:
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
-    void print() const;
-    void showMenuActions() const;
-    void setModel(string const * const model_in);
-    void setModel(string const model_in);
-    void setColor(string const * const color_in);
-    void setColor(string const color_in);
-    void setFlight_Hours(int const flight_hours_in);
-    string& getModel();
-    string& getColor();
-    int getFlight_Hours();
+    void    print() const;
+    void    showMenuActions() const;
+    void    setFlight_Hours(int const flight_hours_in);
+    int     getFlight_Hours();
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженые операторы
@@ -42,8 +36,6 @@ public:
     friend istream& operator >> (istream &in, Aeroplane &aeroplane_in);
 
 protected:
-    string model;
-    string color;
     int flight_hours;
 
 private:

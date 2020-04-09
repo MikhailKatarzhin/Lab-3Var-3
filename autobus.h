@@ -22,10 +22,6 @@ public:
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженные операторы
 
-    Autobus& operator ++();
-    Autobus operator ++(int);
-    Autobus& operator --();
-    Autobus operator --(int);
     bool operator == (const Autobus &autobus_in);
     bool operator != (const Autobus &autobus_in);
     bool operator > (const Autobus &autobus_in);

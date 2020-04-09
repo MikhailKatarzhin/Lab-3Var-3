@@ -1,4 +1,3 @@
-//#include <iostream>
 #include "Car.h"
 
 /// ///////////////////////////////////////////////////////////////////////////////
@@ -89,12 +88,4 @@ short requestNumberOfCar( short const countOfCar )  ///Запрос ввода нового числа
         bufferStream >> i;
     }while( ( i < 0 )||( i > countOfCar ) );
     return i;
-}
-
-void changeCarModel( Car * const car )  ///Функция для изменения поля Model для указанного объекта Car
-{
-    string tmpModel;
-    cout << "\nEntry model of car:\t";
-    cin >> tmpModel;
-    car->setModel( &tmpModel );
 }

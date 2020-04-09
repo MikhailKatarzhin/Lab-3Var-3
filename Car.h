@@ -30,4 +30,3 @@ private:
 
 void    showAllCars( short countOfCar, Car const * const cars );
 short   requestNumberOfCar( short const countOfCar );
-void    changeCarModel( Car * const car );

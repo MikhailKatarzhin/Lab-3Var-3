@@ -64,31 +64,6 @@ using namespace std;
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженые операторы
 
-    Autobus& Autobus::operator ++()
-    {
-        this->movementSpeed += 20;
-        return *this;
-    }
-
-    Autobus Autobus::operator ++(int)
-    {
-        this->placeCount +=2;
-        return *this;
-    }
-
-    Autobus& Autobus::operator --()
-    {
-        this->movementSpeed -= 20;
-        return *this;
-    }
-
-    Autobus Autobus::operator --(int)
-    {
-        if (this->placeCount > 2)
-        this->placeCount -=2;
-        return *this;
-    }
-
     bool Autobus::operator == (const Autobus &autobus_in)
     {
         return (

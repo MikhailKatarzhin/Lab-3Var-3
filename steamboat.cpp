@@ -71,37 +71,9 @@
     cout << "\t9)Battle between aeroplanes!!!" << endl;
 }
 
-    void Steamboat::setModel(string const * const model_in)
-    {
-        this -> model = *model_in;
-    }
-    void Steamboat::setModel(string const model_in)
-    {
-        this -> model = model_in;
-    }
-
-    void Steamboat::setColor(string const * const color_in)
-    {
-        this -> color = *color_in;
-    }
-    void Steamboat::setColor(string const color_in)
-    {
-        this -> color = color_in;
-    }
-
     void Steamboat::setTonnage(int const tonnage_in)
     {
         this -> tonnage = tonnage_in;
-    }
-
-    string& Steamboat::getModel()
-    {
-        return model;
-    }
-
-    string& Steamboat::getColor()
-    {
-        return color;
     }
 
     int Steamboat::getTonnage()

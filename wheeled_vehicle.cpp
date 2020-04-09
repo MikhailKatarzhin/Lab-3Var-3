@@ -33,22 +33,6 @@ string const defaultBrandname = "---";
         return brandname;
     }
 
-    void Wheeled_vehicle::setModel(string const * const model_in)
-    {   this -> model = *model_in;  }
-    void Wheeled_vehicle::setModel(string const model_in)
-    {   this -> model = model_in;  }
-
-    void Wheeled_vehicle::setColor(string const * const color_in)
-    {   this -> color = *color_in;  }
-    void Wheeled_vehicle::setColor(string const color_in)
-    {   this -> color = color_in;  }
-
-    string& Wheeled_vehicle::getModel()
-    {   return model;   }
-
-    string& Wheeled_vehicle::getColor()
-    {   return color;   }
-
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженые операторы
 

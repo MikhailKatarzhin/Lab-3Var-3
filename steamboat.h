@@ -19,13 +19,7 @@ public:
 
     void print() const;
     void showMenuActions() const;
-    void setModel(string const * const model_in);
-    void setModel(string const model_in);
-    void setColor(string const * const color_in);
-    void setColor(string const color_in);
     void setTonnage(int const tonnage_in);
-    string& getModel();
-    string& getColor();
     int getTonnage();
 
 /// ///////////////////////////////////////////////////////////////////////////////
@@ -42,8 +36,6 @@ public:
     friend istream& operator >> (istream &in, Steamboat &steamboat_in);
 
 protected:
-    string model;
-    string color;
     int tonnage;
 
 private:

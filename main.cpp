@@ -3,6 +3,8 @@
 #include <string>
 #include <string.h>
 #include <stdlib.h>
+#include "vehicle.h"
+#include "wheeled_vehicle.h"
 #include "Car.h"
 #include "autobus.h"
 #include "aeroplane.h"
@@ -12,29 +14,6 @@
 #define max(left, right) (left > right ? left : right)
 
 using namespace std;
-
-
-
-
-void changeCarSpeed( Car * const car )
-{
-    short   tmpSpeed;
-    while(1)
-    {
-        cout << "\nEntry speed of car(more than 0):\t";
-        string buffer;
-        cin >> buffer;
-        istringstream bufferStream(buffer);
-        bufferStream >> tmpSpeed;
-        if ( tmpSpeed > 0 )
-        {
-            car->setMovementSpeed(tmpSpeed);
-            break;
-        }else{
-            cout << "\nInvalid input, repeat..." << endl;
-        }
-    }
-}
 
 void changeCarColor( Car * const car )
 {
@@ -111,11 +90,11 @@ int main()
     short   countOfAeroplane = 0;
     short   countOfSteamboat = 0;
     short   i = 0;
-    Vehicle ** vehicles = new Vehicle*[4];
-    vehicles[0] = new Car[countOfCar];
-    vehicles[1] = new Autobus[countOfAutobus];
-    vehicles[2] = new Aeroplane[countOfAeroplane];
-    vehicles[3] = new Steamboat[countOfSteamboat];
+    Vehicle ** vehicles = new Vehicle*[5];
+    vehicles[CAR] = new Car[countOfCar];
+    vehicles[AUTOBUS] = new Autobus[countOfAutobus];
+    vehicles[AEROPLANE] = new Aeroplane[countOfAeroplane];
+    vehicles[STEAMBOAT] = new Steamboat[countOfSteamboat];
     Car *cars = new Car[1];
     while( countOfCar )
     {
@@ -146,11 +125,11 @@ int main()
                     break;
                 case 1:
                     system( "cls" );
-                    changeCarModel( &cars[i-1] );
+                    changeModel( &vehicles[CAR][i-1] );
                     break;
                 case 2:
                     system( "cls" );
-                    changeCarSpeed( &cars[i-1] );
+                    changeMovementSpeed( &vehicles[CAR][i-1] );
                     break;
                 case 3:
                     system( "cls" );

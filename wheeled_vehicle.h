@@ -15,11 +15,6 @@ public:
     void showMenuActions() const;
     void setBrandname (string const * const brandname);
     void setBrandname (string const brandname);
-    void setModel(string const * const model_in);
-    void setModel(string const model_in);
-    void setColor(string const * const color_in);
-    void setColor(string const color_in);
-    string& getModel();
     string& getBrandname ();
 
 /// ///////////////////////////////////////////////////////////////////////////////
@@ -37,9 +32,6 @@ public:
 
 protected:
     string brandname;
-    string model;
-    string color;
 
 private:
-    string& getColor();
 };
