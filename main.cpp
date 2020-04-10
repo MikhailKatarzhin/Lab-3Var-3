@@ -104,7 +104,7 @@ int main()
         while( i != 0 )
         {
             system( "cls" );
-            cout << "\nYou are working with car #" << i << "\t" << cars[i-1] << endl; ///Ïàäàåò òóò
+            cout << "\nYou are working with car #" << i << "\t" << cars[i-1] << endl; ///ÐŸÐ°Ð´Ð°ÐµÑ‚ Ñ‚ÑƒÑ‚
             cars[i-1].showMenuActions();
             short var;
             string buffer;

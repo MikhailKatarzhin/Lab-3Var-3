@@ -8,14 +8,14 @@ class Steamboat : public Vehicle
 {
 public:
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Конструкторы
+/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 
     Steamboat();
     Steamboat(string const * const model_in, string const * const color_in, int const movementSpeed_in, int const placeCount_in, int const tonnage);
     Steamboat(Steamboat const &Steamboat);
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Методы
+/// РњРµС‚РѕРґС‹
 
     void print() const;
     void showMenuActions() const;
@@ -23,7 +23,7 @@ public:
     int getTonnage();
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Перегруженые операторы
+/// РџРµСЂРµРіСЂСѓР¶РµРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 
     bool operator == (const Steamboat &steamboat_in);
     bool operator != (const Steamboat &steamboat_in);

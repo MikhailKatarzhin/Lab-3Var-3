@@ -1,11 +1,11 @@
 #include "Car.h"
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Конструкторы
+/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 
 using namespace std;
 
-///Пустой конструктор
+///РџСѓСЃС‚РѕР№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 Car::Car()
 {
     type = CAR;
@@ -14,9 +14,9 @@ Car::Car()
     setColor("UNKNOWN");
     setPlaceCount(defaultPlaceCount);
     setMovementSpeed(defaultMovementSpeed);
-    ///cout << "\nConstruction... " << this;    ///лог о создании
+    ///cout << "\nConstruction... " << this;    ///Р»РѕРі Рѕ СЃРѕР·РґР°РЅРёРё
 }
-///Конструктор с параметрами
+///РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 Car::Car(string const * const brandname_in
            , string const * const model_in
            , string const * const color_in
@@ -29,9 +29,9 @@ Car::Car(string const * const brandname_in
     this -> color = *(color_in);
     this -> movementSpeed = movementSpeed_in;
     this -> placeCount = placeCount_in;
-    ///cout << "\nConstruction... " << this;    ///лог о создании
+    ///cout << "\nConstruction... " << this;    ///Р»РѕРі Рѕ СЃРѕР·РґР°РЅРёРё
 }
-///Конструктор копирования
+///РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 Car::Car(Car const &otherCar)
 {
     type = CAR;
@@ -40,13 +40,13 @@ Car::Car(Car const &otherCar)
     this -> color = otherCar.color;
     this -> movementSpeed = otherCar.movementSpeed;
     this -> placeCount = otherCar.placeCount;
-    ///cout << "\nConstruction copy... " << this;   ///лог о создании
+    ///cout << "\nConstruction copy... " << this;   ///Р»РѕРі Рѕ СЃРѕР·РґР°РЅРёРё
 }
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Методы
+/// РњРµС‚РѕРґС‹
 
-void Car::showMenuActions() ///вывод на экран меню выбора действий с объектом Car
+void Car::showMenuActions() ///РІС‹РІРѕРґ РЅР° СЌРєСЂР°РЅ РјРµРЅСЋ РІС‹Р±РѕСЂР° РґРµР№СЃС‚РІРёР№ СЃ РѕР±СЉРµРєС‚РѕРј Car
 {
     cout << "\n\t\t\t***Menu***" << endl;
     cout << "\t0)Menu up" << endl;
@@ -63,12 +63,12 @@ void Car::showMenuActions() ///вывод на экран меню выбора действий с объектом Ca
 
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Перегруженые операторы
+/// РџРµСЂРµРіСЂСѓР¶РµРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Функции
+/// Р¤СѓРЅРєС†РёРё
 
-void showAllCars( short countOfCar, Car const * const cars )    ///вывод на экран всего списка существующих объектов Car
+void showAllCars( short countOfCar, Car const * const cars )    ///РІС‹РІРѕРґ РЅР° СЌРєСЂР°РЅ РІСЃРµРіРѕ СЃРїРёСЃРєР° СЃСѓС‰РµСЃС‚РІСѓСЋС‰РёС… РѕР±СЉРµРєС‚РѕРІ Car
 {
     for (short i = 0; i < countOfCar; i++)
     {
@@ -77,7 +77,7 @@ void showAllCars( short countOfCar, Car const * const cars )    ///вывод на экра
     }
 }
 
-short requestNumberOfCar( short const countOfCar )  ///Запрос ввода нового числа объектов Car с проверкой
+short requestNumberOfCar( short const countOfCar )  ///Р—Р°РїСЂРѕСЃ РІРІРѕРґР° РЅРѕРІРѕРіРѕ С‡РёСЃР»Р° РѕР±СЉРµРєС‚РѕРІ Car СЃ РїСЂРѕРІРµСЂРєРѕР№
 {
     short i;
     do{

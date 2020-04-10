@@ -1,7 +1,7 @@
 #include "Steamboat.h"
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Конструкторы
+/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 
     Steamboat::Steamboat()
     {
@@ -11,7 +11,7 @@
         setPlaceCount(defaultPlaceCount);
         setMovementSpeed(defaultMovementSpeed);
         setTonnage(0);
-        ///cout << "\nConstruction... " << this;    ///лог о создании
+        ///cout << "\nConstruction... " << this;    ///Р»РѕРі Рѕ СЃРѕР·РґР°РЅРёРё
     }
 
     Steamboat::Steamboat(
@@ -27,7 +27,7 @@
         this -> movementSpeed = movementSpeed_in;
         this -> placeCount = placeCount_in;
         this -> tonnage = tonnage;
-        ///cout << "\nConstruction... " << this;    ///лог о создании
+        ///cout << "\nConstruction... " << this;    ///Р»РѕРі Рѕ СЃРѕР·РґР°РЅРёРё
     }
 
     Steamboat::Steamboat(Steamboat const &otherSteamboat)
@@ -38,11 +38,11 @@
         this -> movementSpeed = otherSteamboat.movementSpeed;
         this -> placeCount = otherSteamboat.placeCount;
         this -> tonnage = otherSteamboat.tonnage;
-        ///cout << "\nConstruction copy... " << this;   ///лог о создании
+        ///cout << "\nConstruction copy... " << this;   ///Р»РѕРі Рѕ СЃРѕР·РґР°РЅРёРё
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Методы
+/// РњРµС‚РѕРґС‹
 
     void Steamboat::print() const
     {
@@ -81,7 +81,7 @@
         return tonnage;
     }
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Перегруженые операторы
+/// РџРµСЂРµРіСЂСѓР¶РµРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 
     bool Steamboat::operator == (const Steamboat &steamboat_in)
     {
@@ -166,7 +166,7 @@
         return *this;
     }
 
-    ostream& operator << (ostream &out, const Steamboat &steamboat_in)  ///вывод полной информации в 2 строки об автомобиле
+    ostream& operator << (ostream &out, const Steamboat &steamboat_in)  ///РІС‹РІРѕРґ РїРѕР»РЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё РІ 2 СЃС‚СЂРѕРєРё РѕР± Р°РІС‚РѕРјРѕР±РёР»Рµ
     {
        cout
            << "\t||\tModel: " << steamboat_in.model
@@ -179,7 +179,7 @@
         return out;
     }
 
-    istream& operator >> (istream &in, Steamboat &steamboat_in) ///последовательный ввод полной информации о легковом автомобиле
+    istream& operator >> (istream &in, Steamboat &steamboat_in) ///РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅС‹Р№ РІРІРѕРґ РїРѕР»РЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё Рѕ Р»РµРіРєРѕРІРѕРј Р°РІС‚РѕРјРѕР±РёР»Рµ
     {
         in >> steamboat_in.model;
         in >> steamboat_in.color;
