@@ -3,7 +3,7 @@
 string const defaultBrandname = "---";
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Методы
+/// РњРµС‚РѕРґС‹
 
     void Wheeled_vehicle::showMenuActions() const{}
 
@@ -34,7 +34,7 @@ string const defaultBrandname = "---";
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Перегруженые операторы
+/// РџРµСЂРµРіСЂСѓР¶РµРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 
     bool Wheeled_vehicle::operator == (const Wheeled_vehicle &wheeled_vehicle_in)
     {
@@ -119,7 +119,7 @@ string const defaultBrandname = "---";
         return *this;
     }
 
-    ostream& operator << (ostream &out, const Wheeled_vehicle &wheeled_vehicle_in)  ///вывод полной информации в 2 строки об автомобиле
+    ostream& operator << (ostream &out, const Wheeled_vehicle &wheeled_vehicle_in)  ///РІС‹РІРѕРґ РїРѕР»РЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё РІ 2 СЃС‚СЂРѕРєРё РѕР± Р°РІС‚РѕРјРѕР±РёР»Рµ
     {
        cout
            << "\t||\tBrandname: " << wheeled_vehicle_in.brandname
@@ -132,7 +132,7 @@ string const defaultBrandname = "---";
         return out;
     }
 
-    istream& operator >> (istream &in, Wheeled_vehicle &wheeled_vehicle_in) ///последовательный ввод полной информации о легковом автомобиле
+    istream& operator >> (istream &in, Wheeled_vehicle &wheeled_vehicle_in) ///РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅС‹Р№ РІРІРѕРґ РїРѕР»РЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё Рѕ Р»РµРіРєРѕРІРѕРј Р°РІС‚РѕРјРѕР±РёР»Рµ
     {
         in >> wheeled_vehicle_in.brandname;
         in >> wheeled_vehicle_in.model;

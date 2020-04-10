@@ -8,19 +8,19 @@ class Autobus : public Wheeled_vehicle
 public:
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Конструкторы
+/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 
     Autobus();
     Autobus(string const * const brandname_in, string const * const model_in, string const * const color_in, int const movementSpeed_in, int const placeCount_in);
     Autobus(Autobus const &autobus);
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Методы
+/// РњРµС‚РѕРґС‹
 
     void showMenuActions();
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Перегруженные операторы
+/// РџРµСЂРµРіСЂСѓР¶РµРЅРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 
     bool operator == (const Autobus &autobus_in);
     bool operator != (const Autobus &autobus_in);

@@ -1,7 +1,7 @@
 #include "aeroplane.h"
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Конструкторы
+/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 
     Aeroplane::Aeroplane()
     {
@@ -11,7 +11,7 @@
         setPlaceCount(defaultPlaceCount);
         setMovementSpeed(defaultMovementSpeed);
         setFlight_Hours(0);
-        ///cout << "\nConstruction... " << this;    ///лог о создании
+        ///cout << "\nConstruction... " << this;    ///Р»РѕРі Рѕ СЃРѕР·РґР°РЅРёРё
     }
 
     Aeroplane::Aeroplane(
@@ -27,7 +27,7 @@
         this -> movementSpeed = movementSpeed_in;
         this -> placeCount = placeCount_in;
         this -> flight_hours = flight_hours;
-        ///cout << "\nConstruction... " << this;    ///лог о создании
+        ///cout << "\nConstruction... " << this;    ///Р»РѕРі Рѕ СЃРѕР·РґР°РЅРёРё
     }
 
     Aeroplane::Aeroplane(Aeroplane const &otherAeroplane)
@@ -38,11 +38,11 @@
         this -> movementSpeed = otherAeroplane.movementSpeed;
         this -> placeCount = otherAeroplane.placeCount;
         this -> flight_hours = otherAeroplane.flight_hours;
-        ///cout << "\nConstruction copy... " << this;   ///лог о создании
+        ///cout << "\nConstruction copy... " << this;   ///Р»РѕРі Рѕ СЃРѕР·РґР°РЅРёРё
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Методы
+/// РњРµС‚РѕРґС‹
 
     void Aeroplane::print() const
     {
@@ -82,7 +82,7 @@
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Перегруженые операторы
+/// РџРµСЂРµРіСЂСѓР¶РµРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 
     bool Aeroplane::operator == (const Aeroplane &aeroplane_in)
     {
@@ -167,7 +167,7 @@
         return *this;
     }
 
-    ostream& operator << (ostream &out, const Aeroplane &aeroplane_in)  ///вывод полной информации в 2 строки об автомобиле
+    ostream& operator << (ostream &out, const Aeroplane &aeroplane_in)  ///РІС‹РІРѕРґ РїРѕР»РЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё РІ 2 СЃС‚СЂРѕРєРё РѕР± Р°РІС‚РѕРјРѕР±РёР»Рµ
     {
        cout
            << "\t||\tModel: " << aeroplane_in.model
@@ -180,7 +180,7 @@
         return out;
     }
 
-    istream& operator >> (istream &in, Aeroplane &aeroplane_in) ///последовательный ввод полной информации о легковом автомобиле
+    istream& operator >> (istream &in, Aeroplane &aeroplane_in) ///РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅС‹Р№ РІРІРѕРґ РїРѕР»РЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё Рѕ Р»РµРіРєРѕРІРѕРј Р°РІС‚РѕРјРѕР±РёР»Рµ
     {
         in >> aeroplane_in.model;
         in >> aeroplane_in.color;

@@ -8,14 +8,14 @@ class Aeroplane : public Vehicle
 {
 public:
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Конструкторы
+/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 
     Aeroplane();
     Aeroplane(string const * const model_in, string const * const color_in, int const movementSpeed_in, int const placeCount_in, int const flight_hours);
     Aeroplane(Aeroplane const &aeroplane);
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Методы
+/// РњРµС‚РѕРґС‹
 
     void    print() const;
     void    showMenuActions() const;
@@ -23,7 +23,7 @@ public:
     int     getFlight_Hours();
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Перегруженые операторы
+/// РџРµСЂРµРіСЂСѓР¶РµРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 
     bool operator == (const Aeroplane &aeroplane_in);
     bool operator != (const Aeroplane &aeroplane_in);

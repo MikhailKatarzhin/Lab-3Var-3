@@ -8,7 +8,7 @@ class Wheeled_vehicle: public Vehicle
 public:
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Методы
+/// РњРµС‚РѕРґС‹
 
     static string const defaultBrandname;
     void print() const;
@@ -18,7 +18,7 @@ public:
     string& getBrandname ();
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Перегруженые операторы
+/// РџРµСЂРµРіСЂСѓР¶РµРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 
     bool operator == (const Wheeled_vehicle &wheeled_vehicle_in);
     bool operator != (const Wheeled_vehicle &wheeled_vehicle_in);

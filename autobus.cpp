@@ -4,7 +4,7 @@
 using namespace std;
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Конструкторы
+/// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 
     Autobus::Autobus()
     {
@@ -14,7 +14,7 @@ using namespace std;
         setColor("UNKNOWN");
         setPlaceCount(defaultPlaceCount);
         setMovementSpeed(defaultMovementSpeed);
-        ///cout << "\nConstruction... " << this;    ///лог о создании
+        ///cout << "\nConstruction... " << this;    ///Р»РѕРі Рѕ СЃРѕР·РґР°РЅРёРё
     }
 
     Autobus::Autobus(string const * const brandname_in
@@ -29,7 +29,7 @@ using namespace std;
         this -> color = *(color_in);
         this -> movementSpeed = movementSpeed_in;
         this -> placeCount = placeCount_in;
-        ///cout << "\nConstruction... " << this;    ///лог о создании
+        ///cout << "\nConstruction... " << this;    ///Р»РѕРі Рѕ СЃРѕР·РґР°РЅРёРё
     }
 
     Autobus::Autobus(Autobus const &otherAutobus)
@@ -40,11 +40,11 @@ using namespace std;
         this -> color = otherAutobus.color;
         this -> movementSpeed = otherAutobus.movementSpeed;
         this -> placeCount = otherAutobus.placeCount;
-        ///cout << "\nConstruction copy... " << this;   ///лог о создании
+        ///cout << "\nConstruction copy... " << this;   ///Р»РѕРі Рѕ СЃРѕР·РґР°РЅРёРё
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Методы
+/// РњРµС‚РѕРґС‹
 
     void Autobus::showMenuActions()
 {
@@ -62,7 +62,7 @@ using namespace std;
 }
 
 /// ///////////////////////////////////////////////////////////////////////////////
-/// Перегруженые операторы
+/// РџРµСЂРµРіСЂСѓР¶РµРЅС‹Рµ РѕРїРµСЂР°С‚РѕСЂС‹
 
     bool Autobus::operator == (const Autobus &autobus_in)
     {
@@ -147,7 +147,7 @@ using namespace std;
         return *this;
     }
 
-    ostream& operator << (ostream &out, const Autobus &autobus_in)  ///вывод полной информации в 2 строки об автомобиле
+    ostream& operator << (ostream &out, const Autobus &autobus_in)  ///РІС‹РІРѕРґ РїРѕР»РЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё РІ 2 СЃС‚СЂРѕРєРё РѕР± Р°РІС‚РѕРјРѕР±РёР»Рµ
     {
        cout
            << "\t||\tBrandname: " << autobus_in.brandname
@@ -160,7 +160,7 @@ using namespace std;
         return out;
     }
 
-    istream& operator >> (istream &in, Autobus &autobus_in) ///последовательный ввод полной информации о легковом автомобиле
+    istream& operator >> (istream &in, Autobus &autobus_in) ///РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅС‹Р№ РІРІРѕРґ РїРѕР»РЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё Рѕ Р»РµРіРєРѕРІРѕРј Р°РІС‚РѕРјРѕР±РёР»Рµ
     {
         in >> autobus_in.brandname;
         in >> autobus_in.model;
