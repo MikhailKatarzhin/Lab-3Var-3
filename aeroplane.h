@@ -11,7 +11,13 @@ public:
 /// Конструкторы
 
     Aeroplane();
-    Aeroplane(string const * const model_in, string const * const color_in, int const movementSpeed_in, int const placeCount_in, int const flight_hours);
+    Aeroplane(
+              string const &model,
+              string const &color,
+              int const movementSpeed,
+              int const placeCount,
+              int const flight_hours
+              );
     Aeroplane(Aeroplane const &aeroplane);
 
 /// ///////////////////////////////////////////////////////////////////////////////

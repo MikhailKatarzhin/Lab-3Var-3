@@ -10,12 +10,12 @@
     }
 
     Aeroplane::Aeroplane(
-                string const * const model_in,
-                string const * const color_in,
-                int const movementSpeed_in,
-                int const placeCount_in,
-                int const flight_hours
-                )   : Vehicle( model_in, color_in, movementSpeed_in, placeCount_in )
+                         string const &model,
+                         string const &color,
+                         int const movementSpeed,
+                         int const placeCount,
+                         int const flight_hours
+                         ) : Vehicle( model, color, movementSpeed, placeCount )
     {
         type = AEROPLANE;
         this -> flight_hours = flight_hours;

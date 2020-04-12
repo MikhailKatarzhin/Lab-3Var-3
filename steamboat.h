@@ -11,7 +11,13 @@ public:
 /// Конструкторы
 
     Steamboat();
-    Steamboat(string const * const model_in, string const * const color_in, int const movementSpeed_in, int const placeCount_in, int const tonnage);
+    Steamboat(
+              string const &model,
+              string const &color,
+              int const movementSpeed,
+              int const placeCount,
+              int const tonnage
+              );
     Steamboat(Steamboat const &Steamboat);
 
 /// ///////////////////////////////////////////////////////////////////////////////

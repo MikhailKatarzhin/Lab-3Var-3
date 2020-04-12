@@ -1,8 +1,6 @@
 #include <iostream>
 #include "autobus.h"
 
-using namespace std;
-
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Конструкторы
 
@@ -11,12 +9,13 @@ using namespace std;
         type = AUTOBUS;
     }
 
-    Autobus::Autobus(string const * const brandname_in
-               , string const * const model_in
-               , string const * const color_in
-               , int const movementSpeed_in
-               , int const placeCount_in
-               )    : Wheeled_vehicle( brandname_in, model_in, color_in, movementSpeed_in, placeCount_in)
+    Autobus::Autobus(
+                     std::string const &brandname,
+                     std::string const &model,
+                     std::string const &color,
+                     int const movementSpeed,
+                     int const placeCount
+                     ) : Wheeled_vehicle( brandname, model, color, movementSpeed, placeCount )
     {
         type = AUTOBUS;
     }
@@ -31,124 +30,124 @@ using namespace std;
 
     void Autobus::showMenuActions()
 {
-    cout << "\n\t\t\t***Menu***" << endl;
-    cout << "\t0)Menu up" << endl;
-    cout << "\t1)Set model of autobus" << endl;
-    cout << "\t2)Set speed of autobus" << endl;
-    cout << "\t3)Set color of autobus" << endl;
-    cout << "\t4)Create a duplicate of this autobus" << endl;
-    cout << "\t5)Delete this autobus" << endl;
-    cout << "\t6)Add some autobus" << endl;
-    cout << "\t7)Upgrade autobus" << endl;
-    cout << "\t8)Downgrade autobus" << endl;
-    cout << "\t9)Battle between autobuses!!!" << endl;
+    std::cout << "\n\t\t\t***Menu***\n";
+    std::cout << "\t0)Menu up\n";
+    std::cout << "\t1)Set model of autobus\n";
+    std::cout << "\t2)Set speed of autobus\n";
+    std::cout << "\t3)Set color of autobus\n";
+    std::cout << "\t4)Create a duplicate of this autobus\n";
+    std::cout << "\t5)Delete this autobus\n";
+    std::cout << "\t6)Add some autobus\n";
+    std::cout << "\t7)Upgrade autobus\n";
+    std::cout << "\t8)Downgrade autobus\n" ;
+    std::cout << "\t9)Battle between autobuses!!!\n";
 }
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженые операторы
 
-    bool Autobus::operator == (const Autobus &autobus_in)
+    bool Autobus::operator == ( const Autobus &autobus )
     {
         return (
-                    (this -> brandname == autobus_in.brandname)
-                    &&(this -> model == autobus_in.model)
-                    &&(this -> color == autobus_in.color)
-                    &&(this -> movementSpeed == autobus_in.movementSpeed)
-                    &&(this -> placeCount == autobus_in.placeCount)
+                ( this -> brandname == autobus.brandname )&&
+                ( this -> model == autobus.model )&&
+                ( this -> color == autobus.color )&&
+                ( this -> movementSpeed == autobus.movementSpeed )&&
+                ( this -> placeCount == autobus.placeCount )
                 );
     }
 
-    bool Autobus::operator != (const Autobus &autobus_in)
+    bool Autobus::operator != ( const Autobus &autobus )
     {
         return (
-                    (this -> brandname != autobus_in.brandname)
-                    ||(this -> model != autobus_in.model)
-                    ||(this -> color != autobus_in.color)
-                    ||(this -> movementSpeed != autobus_in.movementSpeed)
+                ( this -> brandname != autobus.brandname )||
+                ( this -> model != autobus.model )||
+                ( this -> color != autobus.color )||
+                ( this -> movementSpeed != autobus.movementSpeed )
                 );
     }
 
-    bool Autobus::operator > (const Autobus &autobus_in)
+    bool Autobus::operator > ( const Autobus &autobus )
     {
-        if (this->brandname <= autobus_in.brandname)
+        if ( this->brandname <= autobus.brandname )
             return false;
-        if (this -> model <= autobus_in.model)
+        if ( this->model <= autobus.model )
             return false;
-        if (this -> color <= autobus_in.color)
+        if ( this->color <= autobus.color )
             return false;
-        if (this -> movementSpeed <= autobus_in.movementSpeed)
+        if ( this->movementSpeed <= autobus.movementSpeed )
             return false;
-        return (this -> placeCount > autobus_in.placeCount);
+        return ( this->placeCount > autobus.placeCount );
     }
 
-    bool Autobus::operator < (const Autobus &autobus_in)
+    bool Autobus::operator < ( const Autobus &autobus )
     {
-        if (this->brandname >= autobus_in.brandname)
+        if ( this->brandname >= autobus.brandname)
             return false;
-        if (this -> model >= autobus_in.model)
+        if ( this->model >= autobus.model )
             return false;
-        if (this -> color >= autobus_in.color)
+        if ( this->color >= autobus.color )
             return false;
-        if (this -> movementSpeed >= autobus_in.movementSpeed)
+        if ( this->movementSpeed >= autobus.movementSpeed )
             return false;
-        return (this -> placeCount < autobus_in.placeCount);
+        return ( this->placeCount < autobus.placeCount );
     }
 
-    bool Autobus::operator <= (const Autobus &autobus_in)
+    bool Autobus::operator <= ( const Autobus &autobus )
     {
-        if (this->brandname > autobus_in.brandname)
+        if ( this->brandname > autobus.brandname )
             return false;
-        if (this -> model > autobus_in.model)
+        if ( this->model > autobus.model )
             return false;
-        if (this -> color > autobus_in.color)
+        if ( this->color > autobus.color )
             return false;
-        if (this -> movementSpeed > autobus_in.movementSpeed)
+        if ( this->movementSpeed > autobus.movementSpeed )
             return false;
-        return (this -> placeCount <= autobus_in.placeCount);
+        return ( this->placeCount <= autobus.placeCount );
     }
 
-    bool Autobus::operator >= (const Autobus &autobus_in)
+    bool Autobus::operator >= ( const Autobus &autobus )
     {
-        if (this->brandname < autobus_in.brandname)
+        if ( this->brandname < autobus.brandname )
             return false;
-        if (this -> model < autobus_in.model)
+        if ( this->model < autobus.model )
             return false;
-        if (this -> color < autobus_in.color)
+        if ( this->color < autobus.color )
             return false;
-        if (this -> movementSpeed < autobus_in.movementSpeed)
+        if ( this->movementSpeed < autobus.movementSpeed )
             return false;
-        return (this -> placeCount >= autobus_in.placeCount);
+        return ( this->placeCount >= autobus.placeCount );
     }
 
-    Autobus& Autobus::operator = (const Autobus &autobus_in)
+    Autobus& Autobus::operator = ( const Autobus &autobus )
     {
-        this ->brandname = autobus_in.brandname;
-        this -> model = autobus_in.model;
-        this -> color = autobus_in.color;
-        this -> movementSpeed = autobus_in.movementSpeed;
-        this -> placeCount = autobus_in.placeCount;
+        this->brandname     = autobus.brandname;
+        this->model         = autobus.model;
+        this->color         = autobus.color;
+        this->movementSpeed = autobus.movementSpeed;
+        this->placeCount    = autobus.placeCount;
         return *this;
     }
 
-    ostream& operator << (ostream &out, const Autobus &autobus_in)  ///вывод полной информации в 2 строки об автомобиле
+    std::ostream& operator << (std::ostream &out, const Autobus &autobus)  ///вывод полной информации в 2 строки об автомобиле
     {
-       cout
-           << "\t||\tBrandname: " << autobus_in.brandname
-           << "\t||\tModel: " << autobus_in.model
-           << "\t||\tColor: " << autobus_in.color << endl
-           << "\t||\tSpeed: " << autobus_in.movementSpeed
-           << "\t||\tPlaces count: " << autobus_in.placeCount
-           << "\t||"
+       out <<
+            "\t||\tBrandname: "     << autobus.brandname <<
+            "\t||\tModel: "         << autobus.model <<
+            "\t||\tColor: "         << autobus.color << endl <<
+            "\t||\tSpeed: "         << autobus.movementSpeed <<
+            "\t||\tPlaces count: "  << autobus.placeCount <<
+            "\t||"
         ;
         return out;
     }
 
-    istream& operator >> (istream &in, Autobus &autobus_in) ///последовательный ввод полной информации о легковом автомобиле
+    std::istream& operator >> (std::istream &in, Autobus &autobus) ///последовательный ввод полной информации о легковом автомобиле
     {
-        in >> autobus_in.brandname;
-        in >> autobus_in.model;
-        in >> autobus_in.color;
-        in >> autobus_in.movementSpeed;
-        in >> autobus_in.placeCount;
+        in >> autobus.brandname;
+        in >> autobus.model;
+        in >> autobus.color;
+        in >> autobus.movementSpeed;
+        in >> autobus.placeCount;
         return in;
     }

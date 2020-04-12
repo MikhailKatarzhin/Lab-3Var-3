@@ -1,27 +1,25 @@
 #include "wheeled_vehicle.h"
 
-string const defaultBrandname = "---";
-
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Конструкторы
 
     Wheeled_vehicle::Wheeled_vehicle() : Vehicle()
     {
-        setBrandname( "___" );
+        setBrandnameDefault();
     }
 
     Wheeled_vehicle::Wheeled_vehicle(
-                string const * const brandname_in,
-                string const * const model_in,
-                string const * const color_in,
-                int const movementSpeed_in,
-                int const placeCount_in
-                ) : Vehicle( model_in, color_in, movementSpeed_in, placeCount_in )
+                std::string const &brandname,
+                std::string const &model,
+                std::string const &color,
+                int const movementSpeed,
+                int const placeCount
+                ) : Vehicle( model, color, movementSpeed, placeCount )
     {
-        this->brandname = *(brandname_in);
+        this->brandname = brandname;
     }
 
-    Wheeled_vehicle::Wheeled_vehicle(Wheeled_vehicle const &wheeled_vehicle) : Vehicle( wheeled_vehicle )
+    Wheeled_vehicle::Wheeled_vehicle( Wheeled_vehicle const &wheeled_vehicle ) : Vehicle( wheeled_vehicle )
     {
         this->brandname = wheeled_vehicle.brandname;
     }
@@ -30,7 +28,10 @@ string const defaultBrandname = "---";
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
-    void Wheeled_vehicle::showMenuActions() const{}
+    void Wheeled_vehicle::setBrandnameDefault()
+    {
+        this->brandname = "___";
+    }
 
     void Wheeled_vehicle::print() const
     {
@@ -44,16 +45,18 @@ string const defaultBrandname = "---";
         ;
     }
 
-    void Wheeled_vehicle::setBrandname (string const * const brandname)
+    void Wheeled_vehicle::showMenuActions() const{}
+
+    void Wheeled_vehicle::setBrandname ( std::string const &brandname )
     {
-        this->brandname = *brandname;
+        this->brandname = brandname;
     }
-    void Wheeled_vehicle::setBrandname (string const brandname)
+    void Wheeled_vehicle::setBrandname ( std::string const brandname )
     {
         this->brandname = brandname;
     }
 
-    string& Wheeled_vehicle::getBrandname ()
+    std::string& Wheeled_vehicle::getBrandname ()
     {
         return brandname;
     }
@@ -144,12 +147,12 @@ string const defaultBrandname = "---";
         return *this;
     }
 
-    ostream& operator << (ostream &out, const Wheeled_vehicle &wheeled_vehicle_in)  ///вывод полной информации в 2 строки об автомобиле
+    std::ostream& operator << (std::ostream &out, const Wheeled_vehicle &wheeled_vehicle_in)  ///вывод полной информации в 2 строки об автомобиле
     {
-       cout
+       out
            << "\t||\tBrandname: " << wheeled_vehicle_in.brandname
            << "\t||\tModel: " << wheeled_vehicle_in.model
-           << "\t||\tColor: " << wheeled_vehicle_in.color << endl
+           << "\t||\tColor: " << wheeled_vehicle_in.color << std::endl
            << "\t||\tSpeed: " << wheeled_vehicle_in.movementSpeed
            << "\t||\tPlaces count: " << wheeled_vehicle_in.placeCount
            << "\t||"
@@ -157,7 +160,7 @@ string const defaultBrandname = "---";
         return out;
     }
 
-    istream& operator >> (istream &in, Wheeled_vehicle &wheeled_vehicle_in) ///последовательный ввод полной информации о легковом автомобиле
+    std::istream& operator >> (std::istream &in, Wheeled_vehicle &wheeled_vehicle_in) ///последовательный ввод полной информации о легковом автомобиле
     {
         in >> wheeled_vehicle_in.brandname;
         in >> wheeled_vehicle_in.model;

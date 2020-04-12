@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <sstream>
-using namespace std;
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перечисление типов транспортных средств
@@ -24,36 +23,45 @@ public:
 
     Vehicle();
     Vehicle(
-            string const * const model_in,
-            string const * const color_in,
-            int const movementSpeed_in,
-            int const placeCount_in
+            std::string const &model,
+            std::string const &color,
+            int const movementSpeed,
+            int const placeCount
             );
     Vehicle(Vehicle const &Vehicle);
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
+    void setModelDefault();
+    void setColorDefault();
+    void setPlaceCountDefault();
+    void setMovementSpeedDefault();
+
     void    virtual print() const = 0;
     void    virtual showMenuActions() const = 0;
-    static  int const defaultMovementSpeed = 0;
-    static  unsigned int const defaultPlaceCount = 1;
-    void    setModel(string const * const model_in);
-    void    setModel(string const model_in);
-    string& getModel();
-    void    setColor(string const * const color_in);
-    void    setColor(string const color_in);
-    string& getColor();
-    void    setMovementSpeed(int const movementSpeed);
-    void    setMovementSpeed(short int const movementSpeed);
-    void    setMovementSpeed(unsigned int const movementSpeed);
-    void    setMovementSpeed(unsigned short int const movementSpeed);
+
+
+    void    setModel( std::string const &model_in );
+    std::string& getModel();
+
+    void    setColor( std::string const &color_in );
+    std::string& getColor();
+
+    void    setMovementSpeed( int const movementSpeed );
+    void    setMovementSpeed( short int const movementSpeed );
+    void    setMovementSpeed( unsigned int const movementSpeed );
+    void    setMovementSpeed( unsigned short int const movementSpeed );
+    void    setMovementSpeed( std::string const &movementSpeed );
     int     getMovementSpeed() const;
-    void    setPlaceCount(int const placeCount);
-    void    setPlaceCount(short int const placeCount);
-    void    setPlaceCount(unsigned int const placeCount);
-    void    setPlaceCount(unsigned short int const placeCount);
+
+    void    setPlaceCount( int const placeCount );
+    void    setPlaceCount( short int const placeCount );
+    void    setPlaceCount( unsigned int const placeCount );
+    void    setPlaceCount( unsigned short int const placeCount );
+    void    setPlaceCount( std::string const &movementSpeed );
     unsigned    getPlaceCount() const;
+
     VehicleType getVehicleType()const;
 
 
@@ -66,8 +74,8 @@ public:
     Vehicle&    operator --(int);
 
 protected:
-    string      model;
-    string      color;
+    std::string model;
+    std::string color;
     signed int  movementSpeed;
     unsigned    placeCount;
     VehicleType type;
@@ -76,7 +84,7 @@ protected:
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Функции
 
-void    changeMovementSpeed( Vehicle * const vehicle );
-void    changePlaceCount( Vehicle * const vehicle );
-void    changeModel( Vehicle * const vehicle );
-void    changeColor( Vehicle * const vehicle );
+void    changeMovementSpeed( Vehicle &vehicle );
+void    changePlaceCount( Vehicle &vehicle );
+void    changeModel( Vehicle &vehicle );
+void    changeColor( Vehicle &vehicle );

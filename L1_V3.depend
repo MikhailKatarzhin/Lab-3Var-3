@@ -1,30 +1,30 @@
 # depslib dependency file v1.0
-1586692361 source:d:\github\lab#3var#3\aeroplane.cpp
+1586710828 source:d:\github\lab#3var#3\aeroplane.cpp
 	"aeroplane.h"
 
-1586525534 d:\github\lab#3var#3\aeroplane.h
+1586710837 d:\github\lab#3var#3\aeroplane.h
 	<string>
 	<iostream>
 	"vehicle.h"
 
-1586686819 d:\github\lab#3var#3\vehicle.h
+1586716886 d:\github\lab#3var#3\vehicle.h
 	<iostream>
 	<sstream>
 
-1586691402 source:d:\github\lab#3var#3\car.cpp
+1586716240 source:d:\github\lab#3var#3\car.cpp
 	"Car.h"
 
-1586691357 d:\github\lab#3var#3\car.h
+1586716240 d:\github\lab#3var#3\car.h
 	<string>
 	<sstream>
 	"wheeled_vehicle.h"
 
-1586686819 d:\github\lab#3var#3\wheeled_vehicle.h
+1586716569 d:\github\lab#3var#3\wheeled_vehicle.h
 	"vehicle.h"
 	<string>
 	<iostream>
 
-1586686819 source:d:\github\lab#3var#3\main.cpp
+1586716246 source:d:\github\lab#3var#3\main.cpp
 	<iostream>
 	<stdio.h>
 	<string>
@@ -37,25 +37,25 @@
 	"aeroplane.h"
 	"steamboat.h"
 
-1586538568 d:\github\lab#3var#3\autobus.h
+1586712083 d:\github\lab#3var#3\autobus.h
 	<string>
 	"wheeled_vehicle.h"
 
-1586525534 d:\github\lab#3var#3\steamboat.h
+1586710988 d:\github\lab#3var#3\steamboat.h
 	<string>
 	<iostream>
 	"vehicle.h"
 
-1586692888 source:d:\github\lab#3var#3\steamboat.cpp
+1586710988 source:d:\github\lab#3var#3\steamboat.cpp
 	"Steamboat.h"
 
-1586687117 source:d:\github\lab#3var#3\wheeled_vehicle.cpp
+1586716569 source:d:\github\lab#3var#3\wheeled_vehicle.cpp
 	"wheeled_vehicle.h"
 
-1586693131 source:d:\github\lab#3var#3\autobus.cpp
+1586714343 source:d:\github\lab#3var#3\autobus.cpp
 	<iostream>
 	"autobus.h"
 
-1586686819 source:d:\github\lab#3var#3\vehicle.cpp
+1586695450 source:d:\github\lab#3var#3\vehicle.cpp
 	"Vehicle.h"
 

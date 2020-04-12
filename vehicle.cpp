@@ -5,27 +5,26 @@
 
     Vehicle::Vehicle()
     {
-        setModel("Model#0");
-        setColor("UNKNOWN");
-        setPlaceCount(defaultPlaceCount);
-        setMovementSpeed(defaultMovementSpeed);
-        ///cout << "\nConstruction... " << this;    ///лог о создании
+        setModelDefault();
+        setColorDefault();
+        setPlaceCountDefault();
+        setMovementSpeedDefault();
     }
 
     Vehicle::Vehicle(
-            string const * const model_in,
-            string const * const color_in,
-            int const movementSpeed_in,
-            int const placeCount_in
+            std::string const &model,
+            std::string const &color,
+            int const movementSpeed,
+            int const placeCount
             )
 {
-    this -> model = *(model_in);
-    this -> color = *(color_in);
-    this -> movementSpeed = movementSpeed_in;
-    this -> placeCount = placeCount_in;
+    this -> model = model;
+    this -> color = color;
+    this -> movementSpeed = movementSpeed;
+    this -> placeCount = placeCount;
 }
 
-    Vehicle::Vehicle(Vehicle const &vehicle)
+    Vehicle::Vehicle( Vehicle const &vehicle )
     {
         this -> model = vehicle.model;
         this -> color = vehicle.color;
@@ -36,49 +35,64 @@
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
-    void Vehicle::setModel(string const * const model_in)
+    void Vehicle::setModelDefault()
     {
-        this -> model = *model_in;
+        this->model = "Model#0";
     }
-    void Vehicle::setModel(string const model_in)
+    void Vehicle::setColorDefault()
     {
-        this -> model = model_in;
+        this->color = "UNKNOWN";
+    }
+    void Vehicle::setPlaceCountDefault()
+    {
+        this->placeCount = 1;
+    }
+    void Vehicle::setMovementSpeedDefault()
+    {
+        this->movementSpeed = 0;
     }
 
-    string& Vehicle::getModel()
+    void Vehicle::setModel( std::string const &model )
+    {
+        this -> model = model;
+    }
+    std::string& Vehicle::getModel()
     {
         return model;
     }
 
-    void Vehicle::setColor(string const * const color_in)
+    void Vehicle::setColor( std::string const &color )
     {
-        this -> color = *color_in;
-    }
-    void Vehicle::setColor(string const color_in)
-    {
-        this -> color = color_in;
+        this -> color = color;
     }
 
-    string& Vehicle::getColor()
+    std::string& Vehicle::getColor()
     {
         return color;
     }
 
-    void Vehicle::setMovementSpeed(int const movementSpeed)
+    void Vehicle::setMovementSpeed( int const movementSpeed )
     {
         this -> movementSpeed = (int)movementSpeed;
     }
-    void Vehicle::setMovementSpeed(short int const movementSpeed)
+    void Vehicle::setMovementSpeed( short int const movementSpeed )
     {
         this -> movementSpeed = (int)movementSpeed;
     }
-    void Vehicle::setMovementSpeed(unsigned int const movementSpeed)
+    void Vehicle::setMovementSpeed( unsigned int const movementSpeed )
     {
         this -> movementSpeed = (int)movementSpeed;
     }
-    void Vehicle::setMovementSpeed(unsigned short int const movementSpeed)
+    void Vehicle::setMovementSpeed( unsigned short int const movementSpeed )
     {
         this -> movementSpeed = (int)movementSpeed;
+    }
+    void Vehicle::setMovementSpeed( std::string const &movementSpeed )
+    {
+        int tmpSpeed;
+        std::istringstream bufferStream(movementSpeed);
+        bufferStream >> tmpSpeed;
+        this -> movementSpeed = tmpSpeed;
     }
 
     int Vehicle::getMovementSpeed() const
@@ -86,22 +100,30 @@
         return movementSpeed;
     }
 
-    void Vehicle::setPlaceCount(int const placeCount)
+    void Vehicle::setPlaceCount( int const placeCount )
     {
         this -> placeCount = (unsigned int)placeCount;
     }
-    void Vehicle::setPlaceCount(short int const placeCount)
+    void Vehicle::setPlaceCount( short int const placeCount )
     {
         this -> placeCount = (unsigned int)placeCount;
     }
-    void Vehicle::setPlaceCount(unsigned int const placeCount)
+    void Vehicle::setPlaceCount( unsigned int const placeCount )
     {
         this -> placeCount = (unsigned int)placeCount;
     }
-    void Vehicle::setPlaceCount(unsigned short int const placeCount)
+    void Vehicle::setPlaceCount( unsigned short int const placeCount )
     {
         this -> placeCount = (unsigned int)placeCount;
     }
+    void Vehicle::setPlaceCount( std::string const &placeCount )
+    {
+        unsigned int tmpPlaceCount;
+        std::istringstream bufferStream( placeCount);
+        bufferStream >> tmpPlaceCount;
+        this -> placeCount = tmpPlaceCount;
+    }
+
 
     unsigned int Vehicle::getPlaceCount() const
     {
@@ -144,58 +166,58 @@
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Функции
 
-    void changeMovementSpeed( Vehicle * const vehicle )
+    void changeMovementSpeed( Vehicle &vehicle )
     {
         short   tmpSpeed;
         while(1)
         {
-            cout << "\nEntry speed of vehicle(more than 0):\t";
-            string buffer;
-            cin >> buffer;
-            istringstream bufferStream(buffer);
+            std::cout << "\nEntry speed of vehicle(more than 0):\t";
+            std::string buffer;
+            std::cin >> buffer;
+            std::istringstream bufferStream(buffer);
             bufferStream >> tmpSpeed;
             if ( tmpSpeed > 0 )
             {
-                vehicle->setMovementSpeed(tmpSpeed);
+                vehicle.setMovementSpeed(tmpSpeed);
                 break;
             }else{
-                cout << "\nInvalid input, repeat..." << endl;
+                std::cout << "\nInvalid input, repeat...\n";
             }
         }
     }
 
-    void changePlaceCount( Vehicle * const vehicle )
+    void changePlaceCount( Vehicle &vehicle )
     {
         short   tmpPlaceCount;
         while(1)
         {
-            cout << "\nEntry place count of vehicle(more than 0):\t";
-            string buffer;
-            cin >> buffer;
-            istringstream bufferStream(buffer);
+            std::cout << "\nEntry place count of vehicle(more than 0):\t";
+            std::string buffer;
+            std::cin >> buffer;
+            std::istringstream bufferStream(buffer);
             bufferStream >> tmpPlaceCount;
             if ( tmpPlaceCount > 0 )
             {
-                vehicle->setPlaceCount(tmpPlaceCount);
+                vehicle.setPlaceCount(tmpPlaceCount);
                 break;
             }else{
-                cout << "\nInvalid input, repeat..." << endl;
+                std::cout << "\nInvalid input, repeat...\n";
             }
         }
     }
 
-    void changeModel( Vehicle * const vehicle )  ///Функция для изменения поля Model для указанного объекта Vehicle
+    void changeModel( Vehicle &vehicle )  ///Функция для изменения поля Model для указанного объекта Vehicle
     {
-        string tmpModel;
-        cout << "\nEntry model of vehicle:\t";
-        cin >> tmpModel;
-        vehicle->setModel( &tmpModel );
+        std::string tmpModel;
+        std::cout << "\nEntry model of vehicle:\t";
+        std::cin >> tmpModel;
+        vehicle.setModel( tmpModel );
     }
 
-    void changeColor( Vehicle * const vehicle )
+    void changeColor( Vehicle &vehicle )
     {
-        cout << "\nEntry the color of the car:\t";
-        string tmpColor;
-        cin >> tmpColor;
-        vehicle->setColor( tmpColor );
+        std::cout << "\nEntry the color of the car:\t";
+        std::string tmpColor;
+        std::cin >> tmpColor;
+        vehicle.setColor( tmpColor );
     }

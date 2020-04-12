@@ -12,39 +12,41 @@ public:
 
     Wheeled_vehicle();
     Wheeled_vehicle(
-                    string const * const brandname_in,
-                    string const * const model_in,
-                    string const * const color_in,
-                    int const movementSpeed_in,
-                    int const placeCount_in
+                    std::string const &brandname,
+                    std::string const &model,
+                    std::string const &color,
+                    int const movementSpeed,
+                    int const placeCount
                     );
     Wheeled_vehicle(Wheeled_vehicle const &wheeled_vehicle);
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
-    static string const defaultBrandname;
+    void setBrandnameDefault();
+
     void print() const;
     void showMenuActions() const;
-    void setBrandname (string const * const brandname);
-    void setBrandname (string const brandname);
-    string& getBrandname ();
+
+    void setBrandname( std::string const &brandname );
+    void setBrandname( std::string const brandname );
+    std::string& getBrandname();
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженые операторы
 
-    bool operator == (const Wheeled_vehicle &wheeled_vehicle_in);
-    bool operator != (const Wheeled_vehicle &wheeled_vehicle_in);
-    bool operator > (const Wheeled_vehicle &wheeled_vehicle_in);
-    bool operator < (const Wheeled_vehicle &wheeled_vehicle_in);
-    bool operator <= (const Wheeled_vehicle &wheeled_vehicle_in);
-    bool operator >= (const Wheeled_vehicle &wheeled_vehicle_in);
-    Wheeled_vehicle& operator = (const Wheeled_vehicle &wheeled_vehicle_in);
-    friend ostream& operator << (ostream &out, const Wheeled_vehicle &wheeled_vehicle_in);
-    friend istream& operator >> (istream &in, Wheeled_vehicle &wheeled_vehicle_in);
+    bool operator ==    ( const Wheeled_vehicle &wheeled_vehicle_in );
+    bool operator !=    ( const Wheeled_vehicle &wheeled_vehicle_in );
+    bool operator >     ( const Wheeled_vehicle &wheeled_vehicle_in );
+    bool operator <     ( const Wheeled_vehicle &wheeled_vehicle_in );
+    bool operator <=    ( const Wheeled_vehicle &wheeled_vehicle_in );
+    bool operator >=    ( const Wheeled_vehicle &wheeled_vehicle_in );
+    Wheeled_vehicle& operator = ( const Wheeled_vehicle &wheeled_vehicle_in );
+    friend std::ostream& operator << ( std::ostream &out, const Wheeled_vehicle &wheeled_vehicle_in );
+    friend std::istream& operator >> ( std::istream &in, Wheeled_vehicle &wheeled_vehicle_in );
 
 protected:
-    string brandname;
+    std::string brandname;
 
 private:
 };

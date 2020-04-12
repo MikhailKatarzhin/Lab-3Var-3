@@ -11,8 +11,14 @@ public:
 /// Конструкторы
 
     Autobus();
-    Autobus(string const * const brandname_in, string const * const model_in, string const * const color_in, int const movementSpeed_in, int const placeCount_in);
-    Autobus(Autobus const &autobus);
+    Autobus(
+            string const &brandname,
+            string const &model,
+            string const &color,
+            int const movementSpeed,
+            int const placeCount
+            );
+    Autobus( Autobus const &autobus );
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
@@ -22,15 +28,15 @@ public:
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженные операторы
 
-    bool operator == (const Autobus &autobus_in);
-    bool operator != (const Autobus &autobus_in);
-    bool operator > (const Autobus &autobus_in);
-    bool operator < (const Autobus &autobus_in);
-    bool operator <= (const Autobus &autobus_in);
-    bool operator >= (const Autobus &autobus_in);
-    Autobus& operator = (const Autobus &autobus_in);
-    friend ostream& operator << (ostream &out, const Autobus &autobus_in);
-    friend istream& operator >> (istream &in, Autobus &autobus_in);
+    bool operator == ( Autobus const &autobus );
+    bool operator != ( Autobus const &autobus );
+    bool operator > ( Autobus const &autobus );
+    bool operator < ( Autobus const &autobus );
+    bool operator <= ( Autobus const &autobus );
+    bool operator >= ( Autobus const &autobus );
+    Autobus& operator = ( Autobus const &autobus );
+    friend ostream& operator << (ostream &out, Autobus const &autobus);
+    friend istream& operator >> (istream &in, Autobus &autobus);
 
 protected:
 

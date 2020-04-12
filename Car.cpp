@@ -3,8 +3,6 @@
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Конструкторы
 
-using namespace std;
-
 ///Пустой конструктор
 Car::Car() : Wheeled_vehicle()
 {
@@ -12,12 +10,12 @@ Car::Car() : Wheeled_vehicle()
 }
 ///Конструктор с параметрами
 Car::Car(
-         string const * const brandname_in,
-         string const * const model_in,
-         string const * const color_in,
-         int const movementSpeed_in,
-         int const placeCount_in
-         ) : Wheeled_vehicle( brandname_in, model_in, color_in, movementSpeed_in, placeCount_in )
+         std::string const &brandname,
+         std::string const &model,
+         std::string const &color,
+         int const movementSpeed,
+         int const placeCount
+         ) : Wheeled_vehicle( brandname, model, color, movementSpeed, placeCount )
 {
     type = CAR;
 }
@@ -32,17 +30,17 @@ Car::Car(Car const &otherCar) : Wheeled_vehicle( otherCar )
 
 void Car::showMenuActions() ///вывод на экран меню выбора действий с объектом Car
 {
-    cout << "\n\t\t\t***Menu***" << endl;
-    cout << "\t0)Menu up" << endl;
-    cout << "\t1)Set model of car" << endl;
-    cout << "\t2)Set speed of car" << endl;
-    cout << "\t3)Set color of car" << endl;
-    cout << "\t4)Create a duplicate of this car" << endl;
-    cout << "\t5)Delete this car" << endl;
-    cout << "\t6)Add some cars" << endl;
-    cout << "\t7)Upgrade car" << endl;
-    cout << "\t8)Downgrade car" << endl;
-    cout << "\t9)Battle between cars!!!" << endl;
+    std::cout << "\n\t\t\t***Menu***\n";
+    std::cout << "\t0)Menu up\n";
+    std::cout << "\t1)Set model of car\n";
+    std::cout << "\t2)Set speed of car\n";
+    std::cout << "\t3)Set color of car\n";
+    std::cout << "\t4)Create a duplicate of this car\n";
+    std::cout << "\t5)Delete this car\n";
+    std::cout << "\t6)Add some cars\n";
+    std::cout << "\t7)Upgrade car\n";
+    std::cout << "\t8)Downgrade car\n";
+    std::cout << "\t9)Battle between cars!!!\n";
 }
 
 
@@ -56,7 +54,7 @@ void showAllCars( short countOfCar, Car const * const cars )    ///вывод н
 {
     for (short i = 0; i < countOfCar; i++)
     {
-        cout << "\n" << i+1 << ")";
+        std::cout << "\n" << i+1 << ")";
         cars[i].print();
     }
 }
@@ -65,10 +63,10 @@ short requestNumberOfCar( short const countOfCar )  ///Запрос ввода �
 {
     short i;
     do{
-        cout << "\n\nEntry number of car(to " << countOfCar << ") or close program(input 0)\n" << endl;
-        string buffer;
-        cin >> buffer;
-        istringstream bufferStream(buffer);
+        std::cout << "\n\nEntry number of car(to " << countOfCar << ") or close program(input 0)\n";
+        std::string buffer;
+        std::cin >> buffer;
+        std::istringstream bufferStream(buffer);
         bufferStream >> i;
     }while( ( i < 0 )||( i > countOfCar ) );
     return i;

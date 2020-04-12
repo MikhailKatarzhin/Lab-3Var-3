@@ -13,9 +13,6 @@
 #define min(left, right) (left < right ? left : right)
 #define max(left, right) (left > right ? left : right)
 
-using namespace std;
-
-
 void resizeCars( Car ** cars, short const size, short const newSize )
 {
     Car *newCars = new Car[newSize];
@@ -43,16 +40,16 @@ void addSomeCar( Car ** cars, short * const countOfCar )
     short   addCount = 0;
     while( addCount < 1 )
     {
-        cout << "How many car add in database?" << endl;
-        string buffer;
-        cin >> buffer;
-        istringstream bufferStream(buffer);
+        std::cout << "How many car add in database?\n";
+        std::string buffer;
+        std::cin >> buffer;
+        std::istringstream bufferStream(buffer);
         bufferStream >> addCount;
         if( addCount > 0 )
         {
             break;
         }else{
-            cout << "\nInvalid input, repeat..." << endl;
+            std::cout << "\nInvalid input, repeat...\n";
         }
     }
     //cars = resizeCars(cars, countOfCar, countOfCar + addCount);
@@ -61,15 +58,15 @@ void addSomeCar( Car ** cars, short * const countOfCar )
     for( ; 0 < addCount; --addCount )
     {
         system( "cls" );
-        while( 1 )
+        while( true )
         {
-            cout << "\nCar #" << *( countOfCar )-addCount+1 << " \n|| Model ||\t|| Speed ||\t|| Color ||" << endl;
-            cin >> cars[0][*( countOfCar )-addCount];
+            std::cout << "\nCar #" << *( countOfCar )-addCount+1 << " \n|| Model ||\t|| Speed ||\t|| Color ||\n";
+            std::cin >> cars[0][*( countOfCar )-addCount];
             if( cars[0][*( countOfCar )-addCount].getMovementSpeed() > 0 )
             {
                 break;
             }else{
-                cout << "\nInvalid input speed, repeat..." << endl;
+                std::cout << "\nInvalid input speed, repeat...\n";
             }
         }
     }
@@ -92,7 +89,7 @@ int main()
     while( countOfCar )
     {
         system( "cls" );
-        cout << "\n\t\t\t***Car's database***\n\n";
+        std::cout << "\n\t\t\t***Car's database***\n\n";
         showAllCars( countOfCar, cars );
         i = requestNumberOfCar( countOfCar );
         if( 0 == i )
@@ -104,12 +101,12 @@ int main()
         while( i != 0 )
         {
             system( "cls" );
-            cout << "\nYou are working with car #" << i << "\t" << cars[i-1] << endl;
+            std::cout << "\nYou are working with car #" << i << "\t" << cars[i-1] << std::endl;
             cars[i-1].showMenuActions();
             short var;
-            string buffer;
-            cin >> buffer;
-            istringstream bufferStream(buffer);
+            std::string buffer;
+            std::cin >> buffer;
+            std::istringstream bufferStream(buffer);
             bufferStream >> var;
             switch( var )
             {
@@ -118,15 +115,15 @@ int main()
                     break;
                 case 1:
                     system( "cls" );
-                    changeModel( &vehicles[CAR][i-1] );
+                    changeModel( vehicles[CAR][i-1] );
                     break;
                 case 2:
                     system( "cls" );
-                    changeMovementSpeed( &vehicles[CAR][i-1] );
+                    changeMovementSpeed( vehicles[CAR][i-1] );
                     break;
                 case 3:
                     system( "cls" );
-                    changeColor( &vehicles[CAR][i-1] );
+                    changeColor( vehicles[CAR][i-1] );
                     break;
                 case 4:{
                     cars = resizeCars( cars, countOfCar, countOfCar+1 );
@@ -153,13 +150,13 @@ int main()
                 case 9:
                     short y;
                     do{
-                        cout << "\nSelect enemy for battle(to " << countOfCar <<"): ";
-                        cin >> y;
+                        std::cout << "\nSelect enemy for battle(to " << countOfCar <<"): ";
+                        std::cin >> y;
                     }while( ( y < 0 )||( y > countOfCar ) );
                     if( ( cars[i-1] ).getMovementSpeed() < cars[y-1].getMovementSpeed() )
                     {
                         system( "cls" );
-                        cout << "\n\n\t!!!Win car... IN RIGHT CONNER!!!" << endl;
+                        std::cout << "\n\n\t!!!Win car... IN RIGHT CONNER!!!\n";
                         system( "pause" );
                         ++cars[y-1];
                         cars[y-1]++;
@@ -171,7 +168,7 @@ int main()
                         if( cars[i-1].getMovementSpeed()== cars[y-1].getMovementSpeed() )
                         {
                             system( "cls" );
-                            cout << "\n\n\tWin car... No, no winner... Both rivals fell.." << endl;
+                            std::cout << "\n\n\tWin car... No, no winner... Both rivals fell..\n";
                             system( "pause" );
                             --cars[i-1];
                             --cars[y-1];
@@ -179,7 +176,7 @@ int main()
                             if( cars[i-1].getMovementSpeed() > cars[y-1].getMovementSpeed() )
                             {
                                 system( "cls" );
-                                cout << "\n\n\n\t\t!!!Win car... IN LEFT CONNER!!!" << endl;
+                                std::cout << "\n\n\n\t\t!!!Win car... IN LEFT CONNER!!!\n";
                                 system( "pause" );
                                 ++cars[i-1];
 
@@ -199,6 +196,6 @@ int main()
     {
         system( "cls" );
         showAllCars( countOfCar, cars );
-        cout << "\n\n\t||**||\tWe're out of cars\t||**||\n\n";
+        std::cout << "\n\n\t||**||\tWe're out of cars\t||**||\n\n";
     }
 }

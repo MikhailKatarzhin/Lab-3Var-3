@@ -3,7 +3,6 @@
 #include <sstream>
 #include "wheeled_vehicle.h"
 
-using namespace std;
 class Car : public Wheeled_vehicle
 {
 public:
@@ -12,11 +11,11 @@ public:
 
     Car();
     Car(
-        string const * const brandname_in,
-        string const * const model_in,
-        string const * const color_in,
-        int const movementSpeed_in,
-        int const placeCount_in
+        std::string const &brandname,
+        std::string const &model,
+        std::string const &color,
+        int const movementSpeed,
+        int const placeCount
         );
     Car(Car const &car);
 
