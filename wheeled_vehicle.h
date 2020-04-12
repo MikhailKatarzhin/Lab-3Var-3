@@ -8,6 +8,19 @@ class Wheeled_vehicle: public Vehicle
 public:
 
 /// ///////////////////////////////////////////////////////////////////////////////
+/// Конструкторы
+
+    Wheeled_vehicle();
+    Wheeled_vehicle(
+                    string const * const brandname_in,
+                    string const * const model_in,
+                    string const * const color_in,
+                    int const movementSpeed_in,
+                    int const placeCount_in
+                    );
+    Wheeled_vehicle(Wheeled_vehicle const &wheeled_vehicle);
+
+/// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
     static string const defaultBrandname;

@@ -84,8 +84,8 @@ int main()
     short   countOfSteamboat = 0;
     short   i = 0;
     Vehicle ** vehicles = new Vehicle*[5];
-    vehicles[CAR] = new Car[countOfCar];
-    vehicles[AUTOBUS] = new Autobus[countOfAutobus];
+    vehicles[CAR]       = new Car[countOfCar];
+    vehicles[AUTOBUS]   = new Autobus[countOfAutobus];
     vehicles[AEROPLANE] = new Aeroplane[countOfAeroplane];
     vehicles[STEAMBOAT] = new Steamboat[countOfSteamboat];
     Car *cars = new Car[1];
@@ -104,7 +104,7 @@ int main()
         while( i != 0 )
         {
             system( "cls" );
-            cout << "\nYou are working with car #" << i << "\t" << cars[i-1] << endl; ///Падает тут
+            cout << "\nYou are working with car #" << i << "\t" << cars[i-1] << endl;
             cars[i-1].showMenuActions();
             short var;
             string buffer;

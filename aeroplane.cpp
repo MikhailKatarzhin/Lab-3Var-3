@@ -3,15 +3,10 @@
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Конструкторы
 
-    Aeroplane::Aeroplane()
+    Aeroplane::Aeroplane() : Vehicle()
     {
         type = AEROPLANE;
-        setModel("Model#0");
-        setColor("UNKNOWN");
-        setPlaceCount(defaultPlaceCount);
-        setMovementSpeed(defaultMovementSpeed);
         setFlight_Hours(0);
-        ///cout << "\nConstruction... " << this;    ///лог о создании
     }
 
     Aeroplane::Aeroplane(

@@ -3,15 +3,10 @@
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Конструкторы
 
-    Steamboat::Steamboat()
+    Steamboat::Steamboat() : Vehicle()
     {
         type = STEAMBOAT;
-        setModel("Model#0");
-        setColor("UNKNOWN");
-        setPlaceCount(defaultPlaceCount);
-        setMovementSpeed(defaultMovementSpeed);
         setTonnage(0);
-        ///cout << "\nConstruction... " << this;    ///лог о создании
     }
 
     Steamboat::Steamboat(

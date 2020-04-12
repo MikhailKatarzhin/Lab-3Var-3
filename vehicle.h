@@ -20,6 +20,18 @@ class Vehicle
 public:
 
 /// ///////////////////////////////////////////////////////////////////////////////
+/// Конструкторы
+
+    Vehicle();
+    Vehicle(
+            string const * const model_in,
+            string const * const color_in,
+            int const movementSpeed_in,
+            int const placeCount_in
+            );
+    Vehicle(Vehicle const &Vehicle);
+
+/// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
     void    virtual print() const = 0;

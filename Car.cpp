@@ -6,15 +6,9 @@
 using namespace std;
 
 ///Пустой конструктор
-Car::Car()
+Car::Car() : Wheeled_vehicle()
 {
     type = CAR;
-    setBrandname("___");
-    setModel("Model#0");
-    setColor("UNKNOWN");
-    setPlaceCount(defaultPlaceCount);
-    setMovementSpeed(defaultMovementSpeed);
-    ///cout << "\nConstruction... " << this;    ///лог о создании
 }
 ///Конструктор с параметрами
 Car::Car(string const * const brandname_in

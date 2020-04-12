@@ -1,6 +1,39 @@
 #include "Vehicle.h"
 
 /// ///////////////////////////////////////////////////////////////////////////////
+/// Конструкторы
+
+    Vehicle::Vehicle()
+    {
+        setModel("Model#0");
+        setColor("UNKNOWN");
+        setPlaceCount(defaultPlaceCount);
+        setMovementSpeed(defaultMovementSpeed);
+        ///cout << "\nConstruction... " << this;    ///лог о создании
+    }
+
+    Vehicle::Vehicle(
+            string const * const model_in,
+            string const * const color_in,
+            int const movementSpeed_in,
+            int const placeCount_in
+            )
+{
+    this -> model = *(model_in);
+    this -> color = *(color_in);
+    this -> movementSpeed = movementSpeed_in;
+    this -> placeCount = placeCount_in;
+}
+
+    Vehicle::Vehicle(Vehicle const &vehicle)
+    {
+        this -> model = vehicle.model;
+        this -> color = vehicle.color;
+        this -> movementSpeed = vehicle.movementSpeed;
+        this -> placeCount = vehicle.placeCount;
+    }
+
+/// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
     void Vehicle::setModel(string const * const model_in)

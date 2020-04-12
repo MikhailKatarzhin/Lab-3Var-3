@@ -3,6 +3,25 @@
 string const defaultBrandname = "---";
 
 /// ///////////////////////////////////////////////////////////////////////////////
+/// Конструкторы
+
+    Wheeled_vehicle::Wheeled_vehicle() : Vehicle()
+    {
+        setBrandname( "___" );
+    }
+
+    Wheeled_vehicle::Wheeled_vehicle(
+                string const * const brandname_in,
+                string const * const model_in,
+                string const * const color_in,
+                int const movementSpeed_in,
+                int const placeCount_in
+                ) : Vehicle( model_in, color_in, movementSpeed_in, placeCount_in )
+    {
+        this->brandname = *(brandname_in);
+    }
+
+/// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
     void Wheeled_vehicle::showMenuActions() const{}

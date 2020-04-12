@@ -6,15 +6,9 @@ using namespace std;
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Конструкторы
 
-    Autobus::Autobus()
+    Autobus::Autobus() : Wheeled_vehicle()
     {
         type = AUTOBUS;
-        setBrandname("___");
-        setModel("Model#0");
-        setColor("UNKNOWN");
-        setPlaceCount(defaultPlaceCount);
-        setMovementSpeed(defaultMovementSpeed);
-        ///cout << "\nConstruction... " << this;    ///лог о создании
     }
 
     Autobus::Autobus(string const * const brandname_in
@@ -36,10 +30,6 @@ using namespace std;
     {
         type = AUTOBUS;
         this -> brandname = otherAutobus.brandname;
-        this -> model = otherAutobus.model;
-        this -> color = otherAutobus.color;
-        this -> movementSpeed = otherAutobus.movementSpeed;
-        this -> placeCount = otherAutobus.placeCount;
         ///cout << "\nConstruction copy... " << this;   ///лог о создании
     }
 
