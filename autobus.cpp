@@ -15,22 +15,15 @@ using namespace std;
                , string const * const model_in
                , string const * const color_in
                , int const movementSpeed_in
-               , int const placeCount_in)
+               , int const placeCount_in
+               )    : Wheeled_vehicle( brandname_in, model_in, color_in, movementSpeed_in, placeCount_in)
     {
         type = AUTOBUS;
-        this -> brandname = *(brandname_in);
-        this -> model = *(model_in);
-        this -> color = *(color_in);
-        this -> movementSpeed = movementSpeed_in;
-        this -> placeCount = placeCount_in;
-        ///cout << "\nConstruction... " << this;    ///лог о создании
     }
 
-    Autobus::Autobus(Autobus const &otherAutobus)
+    Autobus::Autobus(Autobus const &otherAutobus) : Wheeled_vehicle( otherAutobus )
     {
         type = AUTOBUS;
-        this -> brandname = otherAutobus.brandname;
-        ///cout << "\nConstruction copy... " << this;   ///лог о создании
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////

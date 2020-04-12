@@ -14,26 +14,17 @@
                 string const * const color_in,
                 int const movementSpeed_in,
                 int const placeCount_in,
-                int const flight_hours)
+                int const flight_hours
+                )   : Vehicle( model_in, color_in, movementSpeed_in, placeCount_in )
     {
         type = AEROPLANE;
-        this -> model = *(model_in);
-        this -> color = *(color_in);
-        this -> movementSpeed = movementSpeed_in;
-        this -> placeCount = placeCount_in;
         this -> flight_hours = flight_hours;
-        ///cout << "\nConstruction... " << this;    ///лог о создании
     }
 
-    Aeroplane::Aeroplane(Aeroplane const &otherAeroplane)
+    Aeroplane::Aeroplane(Aeroplane const &otherAeroplane) : Vehicle( otherAeroplane )
     {
         type = AEROPLANE;
-        this -> model = otherAeroplane.model;
-        this -> color = otherAeroplane.color;
-        this -> movementSpeed = otherAeroplane.movementSpeed;
-        this -> placeCount = otherAeroplane.placeCount;
         this -> flight_hours = otherAeroplane.flight_hours;
-        ///cout << "\nConstruction copy... " << this;   ///лог о создании
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////

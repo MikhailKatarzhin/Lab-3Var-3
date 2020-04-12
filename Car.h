@@ -11,7 +11,13 @@ public:
 /// Конструкторы
 
     Car();
-    Car(string const * const brandname_in, string const * const model_in, string const * const color_in, int const movementSpeed_in, int const placeCount_in);
+    Car(
+        string const * const brandname_in,
+        string const * const model_in,
+        string const * const color_in,
+        int const movementSpeed_in,
+        int const placeCount_in
+        );
     Car(Car const &car);
 
 /// ///////////////////////////////////////////////////////////////////////////////

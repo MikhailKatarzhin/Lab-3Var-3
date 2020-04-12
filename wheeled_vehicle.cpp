@@ -21,6 +21,12 @@ string const defaultBrandname = "---";
         this->brandname = *(brandname_in);
     }
 
+    Wheeled_vehicle::Wheeled_vehicle(Wheeled_vehicle const &wheeled_vehicle) : Vehicle( wheeled_vehicle )
+    {
+        this->brandname = wheeled_vehicle.brandname;
+    }
+
+
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 

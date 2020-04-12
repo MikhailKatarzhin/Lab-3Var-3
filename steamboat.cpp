@@ -14,26 +14,17 @@
                 string const * const color_in,
                 int const movementSpeed_in,
                 int const placeCount_in,
-                int const tonnage)
+                int const tonnage
+                ) : Vehicle( model_in, color_in, movementSpeed_in, placeCount_in )
     {
         type = STEAMBOAT;
-        this -> model = *(model_in);
-        this -> color = *(color_in);
-        this -> movementSpeed = movementSpeed_in;
-        this -> placeCount = placeCount_in;
         this -> tonnage = tonnage;
-        ///cout << "\nConstruction... " << this;    ///лог о создании
     }
 
-    Steamboat::Steamboat(Steamboat const &otherSteamboat)
+    Steamboat::Steamboat(Steamboat const &otherSteamboat) : Vehicle( otherSteamboat )
     {
         type = STEAMBOAT;
-        this -> model = otherSteamboat.model;
-        this -> color = otherSteamboat.color;
-        this -> movementSpeed = otherSteamboat.movementSpeed;
-        this -> placeCount = otherSteamboat.placeCount;
         this -> tonnage = otherSteamboat.tonnage;
-        ///cout << "\nConstruction copy... " << this;   ///лог о создании
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////
