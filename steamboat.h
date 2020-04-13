@@ -20,23 +20,23 @@ public:
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
-    void print() const;
-    void showMenuActions() const;
-    void setTonnage( int const tonnage_in );
-    int getTonnage();
+    void    print() const;
+    void    showMenuActions() const;
+    void    setTonnage( int const tonnage_in );
+    int     getTonnage();
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженые операторы
 
-    bool operator == ( const Steamboat &steamboat_in );
-    bool operator != ( const Steamboat &steamboat_in );
-    bool operator > ( const Steamboat &steamboat_in );
-    bool operator < ( const Steamboat &steamboat_in );
-    bool operator <= ( const Steamboat &steamboat_in );
-    bool operator >= ( const Steamboat &steamboat_in );
-    Steamboat& operator = ( const Steamboat &steamboat_in );
-    friend std::ostream& operator << ( std::ostream &out, const Steamboat &steamboat_in );
-    friend std::istream& operator >> ( std::istream &in, Steamboat &steamboat_in );
+    bool operator ==    ( const Steamboat &steamboat );
+    bool operator !=    ( const Steamboat &steamboat );
+    bool operator >     ( const Steamboat &steamboat );
+    bool operator <     ( const Steamboat &steamboat );
+    bool operator <=    ( const Steamboat &steamboat );
+    bool operator >=    ( const Steamboat &steamboat );
+    Steamboat& operator = ( const Steamboat &steamboat );
+    friend std::ostream& operator << ( std::ostream &out, const Steamboat &steamboat );
+    friend std::istream& operator >> ( std::istream &in, Steamboat &steamboat );
 
 protected:
     int tonnage;

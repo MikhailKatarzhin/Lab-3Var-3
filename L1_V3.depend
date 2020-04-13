@@ -18,7 +18,7 @@
 1586769801 d:\github\lab#3var#3\car.h
 	"wheeled_vehicle.h"
 
-1586716569 d:\github\lab#3var#3\wheeled_vehicle.h
+1586781425 d:\github\lab#3var#3\wheeled_vehicle.h
 	"vehicle.h"
 	<string>
 	<iostream>
@@ -38,19 +38,21 @@
 	<string>
 	"wheeled_vehicle.h"
 
-1586770227 d:\github\lab#3var#3\steamboat.h
+1586780774 d:\github\lab#3var#3\steamboat.h
 	"vehicle.h"
 
-1586710988 source:d:\github\lab#3var#3\steamboat.cpp
+1586780774 source:d:\github\lab#3var#3\steamboat.cpp
 	"Steamboat.h"
+	<string>
+	<iostream>
 
-1586716569 source:d:\github\lab#3var#3\wheeled_vehicle.cpp
+1586781413 source:d:\github\lab#3var#3\wheeled_vehicle.cpp
 	"wheeled_vehicle.h"
 
 1586769638 source:d:\github\lab#3var#3\autobus.cpp
 	<iostream>
 	"autobus.h"
 
-1586765448 source:d:\github\lab#3var#3\vehicle.cpp
+1586780941 source:d:\github\lab#3var#3\vehicle.cpp
 	"Vehicle.h"
 

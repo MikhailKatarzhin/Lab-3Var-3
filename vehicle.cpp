@@ -161,7 +161,7 @@
 
     Vehicle& Vehicle::operator --(int)
     {
-        if (this->placeCount > 2)
+        if( this->placeCount > 2 )
         this->placeCount -=2;
         return *this;
     }
@@ -179,7 +179,7 @@
             std::cin    >> buffer;
             std::istringstream bufferStream( buffer );
             bufferStream >> tmpSpeed;
-            if ( tmpSpeed > 0 )
+            if( tmpSpeed > 0 )
             {
                 vehicle.setMovementSpeed( tmpSpeed );
                 break;
@@ -199,7 +199,7 @@
             std::cin    >> buffer;
             std::istringstream bufferStream( buffer );
             bufferStream >> tmpPlaceCount;
-            if ( tmpPlaceCount > 0 )
+            if( tmpPlaceCount > 0 )
             {
                 vehicle.setPlaceCount( tmpPlaceCount );
                 break;

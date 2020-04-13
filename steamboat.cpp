@@ -23,10 +23,10 @@
         setTonnage( tonnage );
     }
 
-    Steamboat::Steamboat(Steamboat const &otherSteamboat) : Vehicle( otherSteamboat )
+    Steamboat::Steamboat( Steamboat const &otherSteamboat ) : Vehicle( otherSteamboat )
     {
         type = STEAMBOAT;
-        this -> tonnage = otherSteamboat.tonnage;
+        this->tonnage = otherSteamboat.tonnage;
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////
@@ -35,11 +35,11 @@
     void Steamboat::print() const
     {
        std::cout
-           << "\t||\tModel: " << this->model
-           << "\t||\tColor: " << this->color
-           << "\t||\tSpeed: " << this->movementSpeed << "\n"
-           << "\t||\tPlaces count: " << this->placeCount
-           << "\t||\tTonnage: " << this->tonnage
+           << "\t||\tModel: "           << this->model
+           << "\t||\tColor: "           << this->color
+           << "\t||\tSpeed: "           << this->movementSpeed << "\n"
+           << "\t||\tPlaces count: "    << this->placeCount
+           << "\t||\tTonnage: "         << this->tonnage
            << "\t||"
         ;
     }
@@ -59,9 +59,9 @@
     std::cout << "\t9)Battle between aeroplanes!!!\n";
 }
 
-    void Steamboat::setTonnage(int const tonnage_in)
+    void Steamboat::setTonnage( int const tonnage_in )
     {
-        this -> tonnage = tonnage_in;
+        this->tonnage = tonnage_in;
     }
 
     int Steamboat::getTonnage()
@@ -71,109 +71,109 @@
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженые операторы
 
-    bool Steamboat::operator == (const Steamboat &steamboat_in)
+    bool Steamboat::operator == ( const Steamboat &steamboat )
     {
         return (
-                ( this->model == steamboat_in.model )&&
-                ( this->color == steamboat_in.color )&&
-                ( this->movementSpeed == steamboat_in.movementSpeed )&&
-                ( this->placeCount == steamboat_in.placeCount )&&
-                ( this->tonnage == steamboat_in.tonnage )
+                ( this->model           == steamboat.model )         &&
+                ( this->color           == steamboat.color )         &&
+                ( this->movementSpeed   == steamboat.movementSpeed ) &&
+                ( this->placeCount      == steamboat.placeCount )    &&
+                ( this->tonnage         == steamboat.tonnage )
                 );
     }
 
-    bool Steamboat::operator != ( const Steamboat &steamboat_in )
+    bool Steamboat::operator != ( const Steamboat &steamboat )
     {
         return (
-                ( this->tonnage != steamboat_in.tonnage )||
-                ( this->model != steamboat_in.model )||
-                ( this->color != steamboat_in.color )||
-                ( this->movementSpeed != steamboat_in.movementSpeed )||
-                ( this->placeCount == steamboat_in.placeCount )
+                ( this->tonnage         != steamboat.tonnage )       ||
+                ( this->model           != steamboat.model )         ||
+                ( this->color           != steamboat.color )         ||
+                ( this->movementSpeed   != steamboat.movementSpeed ) ||
+                ( this->placeCount      == steamboat.placeCount )
                 );
     }
 
-    bool Steamboat::operator > ( const Steamboat &steamboat_in )
+    bool Steamboat::operator > ( const Steamboat &steamboat )
     {
-        if ( this->tonnage <= steamboat_in.tonnage )
+        if( this->tonnage       <= steamboat.tonnage )
             return false;
-        if ( this -> model <= steamboat_in.model )
+        if( this->model         <= steamboat.model )
             return false;
-        if ( this -> color <= steamboat_in.color )
+        if( this->color         <= steamboat.color )
             return false;
-        if ( this -> movementSpeed <= steamboat_in.movementSpeed )
+        if( this->movementSpeed <= steamboat.movementSpeed )
             return false;
-        return ( this -> placeCount > steamboat_in.placeCount );
+        return ( this->placeCount > steamboat.placeCount );
     }
 
-    bool Steamboat::operator < ( const Steamboat &steamboat_in )
+    bool Steamboat::operator < ( const Steamboat &steamboat )
     {
-        if ( this->tonnage >= steamboat_in.tonnage )
+        if( this->tonnage       >=  steamboat.tonnage )
             return false;
-        if ( this -> model >= steamboat_in.model )
+        if( this->model         >=  steamboat.model )
             return false;
-        if ( this -> color >= steamboat_in.color )
+        if( this->color         >=  steamboat.color )
             return false;
-        if ( this -> movementSpeed >= steamboat_in.movementSpeed )
+        if( this->movementSpeed >=  steamboat.movementSpeed )
             return false;
-        return (this -> placeCount < steamboat_in.placeCount );
+        return (this->placeCount <  steamboat.placeCount );
     }
 
-    bool Steamboat::operator <= ( const Steamboat &steamboat_in )
+    bool Steamboat::operator <= ( const Steamboat &steamboat )
     {
-        if ( this->tonnage > steamboat_in.tonnage )
+        if( this->tonnage       > steamboat.tonnage )
             return false;
-        if ( this -> model > steamboat_in.model )
+        if( this->model         > steamboat.model )
             return false;
-        if ( this -> color > steamboat_in.color )
+        if( this->color         > steamboat.color )
             return false;
-        if ( this -> movementSpeed > steamboat_in.movementSpeed )
+        if( this->movementSpeed > steamboat.movementSpeed )
             return false;
-        return ( this -> placeCount <= steamboat_in.placeCount );
+        return ( this->placeCount <= steamboat.placeCount );
     }
 
-    bool Steamboat::operator >= (const Steamboat &steamboat_in)
+    bool Steamboat::operator >= (const Steamboat &steamboat)
     {
-        if ( this->tonnage < steamboat_in.tonnage )
+        if( this->tonnage       < steamboat.tonnage )
             return false;
-        if ( this -> model < steamboat_in.model )
+        if( this->model         < steamboat.model )
             return false;
-        if ( this -> color < steamboat_in.color )
+        if( this->color         < steamboat.color )
             return false;
-        if ( this -> movementSpeed < steamboat_in.movementSpeed )
+        if( this->movementSpeed < steamboat.movementSpeed )
             return false;
-        return ( this -> placeCount >= steamboat_in.placeCount );
+        return ( this->placeCount >= steamboat.placeCount );
     }
 
-    Steamboat& Steamboat::operator = ( const Steamboat &steamboat_in )
+    Steamboat& Steamboat::operator = ( const Steamboat &steamboat )
     {
-        this->model = steamboat_in.model;
-        this->color = steamboat_in.color;
-        this->movementSpeed = steamboat_in.movementSpeed;
-        this->placeCount = steamboat_in.placeCount;
-        this->tonnage = steamboat_in.tonnage;
+        this->model         = steamboat.model;
+        this->color         = steamboat.color;
+        this->movementSpeed = steamboat.movementSpeed;
+        this->placeCount    = steamboat.placeCount;
+        this->tonnage       = steamboat.tonnage;
         return *this;
     }
 
-    std::ostream& operator << ( std::ostream &out, const Steamboat &steamboat_in )  ///вывод полной информации в 2 строки об автомобиле
+    std::ostream& operator << ( std::ostream &out, const Steamboat &steamboat )  ///вывод полной информации в 2 строки об автомобиле
     {
        out
-           << "\t||\tModel: " << steamboat_in.model
-           << "\t||\tColor: " << steamboat_in.color << "\n"
-           << "\t||\tSpeed: " << steamboat_in.movementSpeed
-           << "\t||\tPlaces count: " << steamboat_in.placeCount
-           << "\t||\tFlight hours: " << steamboat_in.tonnage
+           << "\t||\tModel: "           << steamboat.model
+           << "\t||\tColor: "           << steamboat.color << "\n"
+           << "\t||\tSpeed: "           << steamboat.movementSpeed
+           << "\t||\tPlaces count: "    << steamboat.placeCount
+           << "\t||\tFlight hours: "    << steamboat.tonnage
            << "\t||"
         ;
         return out;
     }
 
-    std::istream& operator >> ( std::istream &in, Steamboat &steamboat_in ) ///последовательный ввод полной информации о легковом автомобиле
+    std::istream& operator >> ( std::istream &in, Steamboat &steamboat ) ///последовательный ввод полной информации о легковом автомобиле
     {
-        in >> steamboat_in.model;
-        in >> steamboat_in.color;
-        in >> steamboat_in.movementSpeed;
-        in >> steamboat_in.placeCount;
-        in >> steamboat_in.tonnage;
+        in >> steamboat.model;
+        in >> steamboat.color;
+        in >> steamboat.movementSpeed;
+        in >> steamboat.placeCount;
+        in >> steamboat.tonnage;
         return in;
     }
