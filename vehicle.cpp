@@ -55,14 +55,13 @@
 
     void Vehicle::print() const
     {
-       std::cout <<
-                "\t|| Type Vehicle: "   << this->type <<
-                "\t|| Model: "          << this->model <<
-                "\t|| Speed: "          << this->movementSpeed <<
-                std::endl   <<
-                "\t|| Places count: "   << this->placeCount <<
-                "\t|| Color: "           << this->color <<
-                "\t||"
+       std::cout                    << " || "               <<
+                "Type Vehicle:\t"   << getVehicleTypeName() << "\t|| " <<
+                "Model:\t"          << this->model          << "\t|| " <<
+                "Speed:\t"          << this->movementSpeed  << "\t|| " <<
+                std::endl           << " || "               <<
+                "Places count:\t"   << this->placeCount     << "\t|| " <<
+                "Color:\t"          << this->color          << "\t|| "
                 ;
     }
 

@@ -35,13 +35,9 @@
 
     void Aeroplane::print() const
     {
-       std::cout <<
-                "\t||\tModel: "           << this->model                    <<
-                "\t||\tColor: "           << this->color                    <<
-                "\t||\tSpeed: "           << this->movementSpeed << "\n"    <<
-                "\t||\tPlaces count: "    << this->placeCount               <<
-                "\t||\tFlight hours: "    << this->flight_hours             <<
-                "\t||"
+        Vehicle::print();
+        std::cout <<
+                "Flight hours:\t"   << this->flight_hours << "\t|| "
         ;
     }
 

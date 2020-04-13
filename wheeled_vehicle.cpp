@@ -35,13 +35,9 @@
 
     void Wheeled_vehicle::print() const
     {
-       std::cout <<
-                "\t||\tBrandname: "     << this->brandname      <<
-                "\t||\tModel: "         << this->model          <<
-                "\t||\tColor: "         << this->color << "\n"  <<
-                "\t||\tSpeed: "         << this->movementSpeed  <<
-                "\t||\tPlaces count: "  << this->placeCount     <<
-                "\t||"
+        Vehicle::print();
+        std::cout <<
+                "Brandname:\t"   << this->brandname << "\t|| "
         ;
     }
 

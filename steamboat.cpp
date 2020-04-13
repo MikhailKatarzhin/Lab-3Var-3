@@ -36,8 +36,7 @@
     {
         Vehicle::print();
         std::cout <<
-                "\t||\tTonnage: "         << this->tonnage <<
-                "\t||"
+                "Tonnage:\t"   << this->tonnage << "\t|| "
         ;
     }
 

@@ -38,7 +38,7 @@ public:
     void    setPlaceCountDefault();
     void    setMovementSpeedDefault();
 
-    void    print() const;
+    void    virtual print() const;
     void    virtual showMenuActions() const = 0;
 
 
