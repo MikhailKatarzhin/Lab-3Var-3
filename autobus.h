@@ -27,15 +27,8 @@ public:
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженные операторы
 
-    bool operator ==    ( Autobus const &autobus );
-    bool operator !=    ( Autobus const &autobus );
-    bool operator >     ( Autobus const &autobus );
-    bool operator <     ( Autobus const &autobus );
-    bool operator <=    ( Autobus const &autobus );
-    bool operator >=    ( Autobus const &autobus );
-    Autobus& operator = ( Autobus const &autobus );
-    friend std::ostream& operator << ( std::ostream &out, Autobus const &autobus );
-    friend std::istream& operator >> ( std::istream &in, Autobus &autobus );
+/// ///////////////////////////////////////////////////////////////////////////////
+/// Функции
 
 protected:
 

@@ -37,15 +37,15 @@
 
     void Vehicle::setModelDefault()
     {
-        this->model         = "Model#0";
+        this->model = "Model#0";
     }
     void Vehicle::setColorDefault()
     {
-        this->color         = "UNKNOWN";
+        this->color = "UNKNOWN";
     }
     void Vehicle::setPlaceCountDefault()
     {
-        this->placeCount    = 1;
+        this->placeCount = 1;
     }
     void Vehicle::setMovementSpeedDefault()
     {
@@ -56,7 +56,7 @@
 
     void Vehicle::setModel( std::string const &model )
     {
-        this->model         = model;
+        this->model = model;
     }
     std::string Vehicle::getModel() const
     {
@@ -209,7 +209,7 @@
         }
     }
 
-    void changeModel( Vehicle &vehicle )  ///Функция для изменения поля Model для указанного объекта Vehicle
+    void changeModel( Vehicle &vehicle )
     {
         std::string tmpModel;
         std::cout   << "\nEntry model of vehicle:\t";

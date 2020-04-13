@@ -34,25 +34,25 @@
 	"autobus.h"
 	"Car.h"
 
-1586769625 d:\github\lab#3var#3\autobus.h
+1586785375 d:\github\lab#3var#3\autobus.h
 	<string>
 	"wheeled_vehicle.h"
 
-1586780774 d:\github\lab#3var#3\steamboat.h
+1586783383 d:\github\lab#3var#3\steamboat.h
 	"vehicle.h"
 
-1586780774 source:d:\github\lab#3var#3\steamboat.cpp
+1586783460 source:d:\github\lab#3var#3\steamboat.cpp
 	"Steamboat.h"
 	<string>
 	<iostream>
 
-1586781413 source:d:\github\lab#3var#3\wheeled_vehicle.cpp
+1586781859 source:d:\github\lab#3var#3\wheeled_vehicle.cpp
 	"wheeled_vehicle.h"
 
 1586769638 source:d:\github\lab#3var#3\autobus.cpp
 	<iostream>
 	"autobus.h"
 
-1586780941 source:d:\github\lab#3var#3\vehicle.cpp
+1586782519 source:d:\github\lab#3var#3\vehicle.cpp
 	"Vehicle.h"
 

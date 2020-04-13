@@ -34,13 +34,13 @@
 
     void Steamboat::print() const
     {
-       std::cout
-           << "\t||\tModel: "           << this->model
-           << "\t||\tColor: "           << this->color
-           << "\t||\tSpeed: "           << this->movementSpeed << "\n"
-           << "\t||\tPlaces count: "    << this->placeCount
-           << "\t||\tTonnage: "         << this->tonnage
-           << "\t||"
+       std::cout <<
+                "\t||\tModel: "           << this->model <<
+                "\t||\tColor: "           << this->color <<
+                "\t||\tSpeed: "           << this->movementSpeed << "\n" <<
+                "\t||\tPlaces count: "    << this->placeCount <<
+                "\t||\tTonnage: "         << this->tonnage <<
+                "\t||"
         ;
     }
 
@@ -157,13 +157,13 @@
 
     std::ostream& operator << ( std::ostream &out, const Steamboat &steamboat )  ///вывод полной информации в 2 строки об автомобиле
     {
-       out
-           << "\t||\tModel: "           << steamboat.model
-           << "\t||\tColor: "           << steamboat.color << "\n"
-           << "\t||\tSpeed: "           << steamboat.movementSpeed
-           << "\t||\tPlaces count: "    << steamboat.placeCount
-           << "\t||\tFlight hours: "    << steamboat.tonnage
-           << "\t||"
+       out <<
+            "\t||\tModel: "           << steamboat.model <<
+            "\t||\tColor: "           << steamboat.color << "\n" <<
+            "\t||\tSpeed: "           << steamboat.movementSpeed <<
+            "\t||\tPlaces count: "    << steamboat.placeCount <<
+            "\t||\tFlight hours: "    << steamboat.tonnage <<
+            "\t||"
         ;
         return out;
     }
