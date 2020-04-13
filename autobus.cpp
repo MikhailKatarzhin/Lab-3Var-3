@@ -129,12 +129,12 @@
         return *this;
     }
 
-    std::ostream& operator << (std::ostream &out, const Autobus &autobus)  ///вывод полной информации в 2 строки об автомобиле
+    std::ostream& operator << ( std::ostream &out, const Autobus &autobus )  ///вывод полной информации в 2 строки об автомобиле
     {
        out <<
             "\t||\tBrandname: "     << autobus.brandname <<
             "\t||\tModel: "         << autobus.model <<
-            "\t||\tColor: "         << autobus.color << endl <<
+            "\t||\tColor: "         << autobus.color << "\n" <<
             "\t||\tSpeed: "         << autobus.movementSpeed <<
             "\t||\tPlaces count: "  << autobus.placeCount <<
             "\t||"
@@ -142,7 +142,7 @@
         return out;
     }
 
-    std::istream& operator >> (std::istream &in, Autobus &autobus) ///последовательный ввод полной информации о легковом автомобиле
+    std::istream& operator >> ( std::istream &in, Autobus &autobus ) ///последовательный ввод полной информации о легковом автомобиле
     {
         in >> autobus.brandname;
         in >> autobus.model;

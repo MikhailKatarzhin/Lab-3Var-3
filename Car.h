@@ -1,6 +1,4 @@
 #pragma once
-#include <string>
-#include <sstream>
 #include "wheeled_vehicle.h"
 
 class Car : public Wheeled_vehicle
@@ -11,13 +9,13 @@ public:
 
     Car();
     Car(
-        std::string const &brandname,
-        std::string const &model,
-        std::string const &color,
-        int const movementSpeed,
-        int const placeCount
+        std::string const   &brandname,
+        std::string const   &model,
+        std::string const   &color,
+        int const           movementSpeed,
+        int const           placeCount
         );
-    Car(Car const &car);
+    Car( Car const &car );
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Методы

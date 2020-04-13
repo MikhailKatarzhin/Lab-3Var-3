@@ -23,30 +23,30 @@ public:
 
     Vehicle();
     Vehicle(
-            std::string const &model,
-            std::string const &color,
-            int const movementSpeed,
-            int const placeCount
+            std::string const   &model,
+            std::string const   &color,
+            int const           movementSpeed,
+            int const           placeCount
             );
-    Vehicle(Vehicle const &Vehicle);
+    Vehicle( Vehicle const &Vehicle );
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
-    void setModelDefault();
-    void setColorDefault();
-    void setPlaceCountDefault();
-    void setMovementSpeedDefault();
+    void    setModelDefault();
+    void    setColorDefault();
+    void    setPlaceCountDefault();
+    void    setMovementSpeedDefault();
 
     void    virtual print() const = 0;
     void    virtual showMenuActions() const = 0;
 
 
-    void    setModel( std::string const &model_in );
-    std::string& getModel();
+    void        setModel( std::string const &model_in );
+    std::string getModel() const;
 
-    void    setColor( std::string const &color_in );
-    std::string& getColor();
+    void        setColor( std::string const &color_in );
+    std::string getColor() const;
 
     void    setMovementSpeed( int const movementSpeed );
     void    setMovementSpeed( short int const movementSpeed );
