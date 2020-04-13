@@ -31,5 +31,5 @@ private:
 
 };
 
-void    showAllCars( short countOfCar, Car const * const cars );
+void    showAllCars( short countOfCar, Car const cars[] );
 short   requestNumberOfCar( short const countOfCar );

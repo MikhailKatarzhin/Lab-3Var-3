@@ -35,13 +35,13 @@
 
     void Aeroplane::print() const
     {
-       std::cout
-           << "\t||\tModel: "           << this->model
-           << "\t||\tColor: "           << this->color
-           << "\t||\tSpeed: "           << this->movementSpeed << "\n"
-           << "\t||\tPlaces count: "    << this->placeCount
-           << "\t||\tFlight hours: "    << this->flight_hours
-           << "\t||"
+       std::cout <<
+                "\t||\tModel: "           << this->model                    <<
+                "\t||\tColor: "           << this->color                    <<
+                "\t||\tSpeed: "           << this->movementSpeed << "\n"    <<
+                "\t||\tPlaces count: "    << this->placeCount               <<
+                "\t||\tFlight hours: "    << this->flight_hours             <<
+                "\t||"
         ;
     }
 
@@ -76,77 +76,77 @@
     bool Aeroplane::operator == (const Aeroplane &aeroplane)
     {
         return (
-                    (this -> model == aeroplane.model)
-                    &&(this -> color == aeroplane.color)
-                    &&(this -> movementSpeed == aeroplane.movementSpeed)
-                    &&(this -> placeCount == aeroplane.placeCount)
-                    &&(this -> flight_hours == aeroplane.flight_hours)
+                (this -> model == aeroplane.model)                  &&
+                (this -> color == aeroplane.color)                  &&
+                (this -> movementSpeed == aeroplane.movementSpeed)  &&
+                (this -> placeCount == aeroplane.placeCount)        &&
+                (this -> flight_hours == aeroplane.flight_hours)
                 );
     }
 
     bool Aeroplane::operator != (const Aeroplane &aeroplane)
     {
         return (
-                    (this -> flight_hours != aeroplane.flight_hours)
-                    ||(this -> model != aeroplane.model)
-                    ||(this -> color != aeroplane.color)
-                    ||(this -> movementSpeed != aeroplane.movementSpeed)
+                (this -> flight_hours != aeroplane.flight_hours)    ||
+                (this -> model != aeroplane.model)                  ||
+                (this -> color != aeroplane.color)                  ||
+                (this -> movementSpeed != aeroplane.movementSpeed)
                 );
     }
 
-    bool Aeroplane::operator > (const Aeroplane &aeroplane)
+    bool Aeroplane::operator > ( const Aeroplane &aeroplane )
     {
-        if (this->flight_hours <= aeroplane.flight_hours)
+        if( this->flight_hours  <= aeroplane.flight_hours )
             return false;
-        if (this -> model <= aeroplane.model)
+        if( this->model         <= aeroplane.model )
             return false;
-        if (this -> color <= aeroplane.color)
+        if( this->color         <= aeroplane.color )
             return false;
-        if (this -> movementSpeed <= aeroplane.movementSpeed)
+        if( this->movementSpeed <= aeroplane.movementSpeed )
             return false;
-        return (this -> placeCount > aeroplane.placeCount);
+        return ( this->placeCount > aeroplane.placeCount );
     }
 
-    bool Aeroplane::operator < (const Aeroplane &aeroplane)
+    bool Aeroplane::operator < ( const Aeroplane &aeroplane )
     {
-        if (this->flight_hours >= aeroplane.flight_hours)
+        if( this->flight_hours  >= aeroplane.flight_hours )
             return false;
-        if (this -> model >= aeroplane.model)
+        if( this->model         >= aeroplane.model )
             return false;
-        if (this -> color >= aeroplane.color)
+        if( this->color         >= aeroplane.color )
             return false;
-        if (this -> movementSpeed >= aeroplane.movementSpeed)
+        if( this->movementSpeed >= aeroplane.movementSpeed )
             return false;
-        return (this -> placeCount < aeroplane.placeCount);
+        return ( this->placeCount < aeroplane.placeCount );
     }
 
-    bool Aeroplane::operator <= (const Aeroplane &aeroplane)
+    bool Aeroplane::operator <= ( const Aeroplane &aeroplane )
     {
-        if (this->flight_hours > aeroplane.flight_hours)
+        if( this->flight_hours  > aeroplane.flight_hours )
             return false;
-        if (this -> model > aeroplane.model)
+        if( this->model         > aeroplane.model )
             return false;
-        if (this -> color > aeroplane.color)
+        if( this->color         > aeroplane.color )
             return false;
-        if (this -> movementSpeed > aeroplane.movementSpeed)
+        if( this->movementSpeed > aeroplane.movementSpeed )
             return false;
-        return (this -> placeCount <= aeroplane.placeCount);
+        return ( this->placeCount <= aeroplane.placeCount );
     }
 
-    bool Aeroplane::operator >= (const Aeroplane &aeroplane)
+    bool Aeroplane::operator >= ( const Aeroplane &aeroplane )
     {
-        if (this->flight_hours < aeroplane.flight_hours)
+        if( this->flight_hours  < aeroplane.flight_hours )
             return false;
-        if (this -> model < aeroplane.model)
+        if( this->model         < aeroplane.model )
             return false;
-        if (this -> color < aeroplane.color)
+        if( this->color         < aeroplane.color )
             return false;
-        if (this -> movementSpeed < aeroplane.movementSpeed)
+        if( this->movementSpeed < aeroplane.movementSpeed )
             return false;
-        return (this -> placeCount >= aeroplane.placeCount);
+        return ( this->placeCount >= aeroplane.placeCount );
     }
 
-    Aeroplane& Aeroplane::operator = (const Aeroplane &aeroplane)
+    Aeroplane& Aeroplane::operator = ( const Aeroplane &aeroplane )
     {
         this->model         = aeroplane.model;
         this->color         = aeroplane.color;
@@ -156,20 +156,20 @@
         return *this;
     }
 
-    std::ostream& operator << ( std::ostream &out, const Aeroplane &aeroplane )  ///вывод полной информации в 2 строки об автомобиле
+    std::ostream& operator << ( std::ostream &out, const Aeroplane &aeroplane )
     {
-       out
-           << "\t||\tModel: "           << aeroplane.model
-           << "\t||\tColor: "           << aeroplane.color << "\n"
-           << "\t||\tSpeed: "           << aeroplane.movementSpeed
-           << "\t||\tPlaces count: "    << aeroplane.placeCount
-           << "\t||\tFlight hours: "    << aeroplane.flight_hours
-           << "\t||"
+       out <<
+            "\t||\tModel: "           << aeroplane.model            <<
+            "\t||\tColor: "           << aeroplane.color << "\n"    <<
+            "\t||\tSpeed: "           << aeroplane.movementSpeed    <<
+            "\t||\tPlaces count: "    << aeroplane.placeCount       <<
+            "\t||\tFlight hours: "    << aeroplane.flight_hours     <<
+            "\t||"
         ;
         return out;
     }
 
-    std::istream& operator >> ( std::istream &in, Aeroplane &aeroplane ) ///последовательный ввод полной информации о легковом автомобиле
+    std::istream& operator >> ( std::istream &in, Aeroplane &aeroplane )
     {
         in >> aeroplane.model;
         in >> aeroplane.color;

@@ -51,7 +51,7 @@ void Car::showMenuActions()
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Функции
 
-void showAllCars( short countOfCar, Car const * const cars )
+void showAllCars( short countOfCar, Car const cars[] )
 {
     for ( short i = 0; i < countOfCar; i++ )
     {

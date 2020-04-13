@@ -34,11 +34,8 @@
 
     void Steamboat::print() const
     {
-       std::cout <<
-                "\t||\tModel: "           << this->model <<
-                "\t||\tColor: "           << this->color <<
-                "\t||\tSpeed: "           << this->movementSpeed << "\n" <<
-                "\t||\tPlaces count: "    << this->placeCount <<
+        Vehicle::print();
+        std::cout <<
                 "\t||\tTonnage: "         << this->tonnage <<
                 "\t||"
         ;

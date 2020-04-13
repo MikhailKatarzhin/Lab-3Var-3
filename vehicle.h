@@ -38,7 +38,7 @@ public:
     void    setPlaceCountDefault();
     void    setMovementSpeedDefault();
 
-    void    virtual print() const = 0;
+    void    print() const;
     void    virtual showMenuActions() const = 0;
 
 
@@ -63,6 +63,7 @@ public:
     unsigned    getPlaceCount() const;
 
     VehicleType getVehicleType()const;
+    std::string getVehicleTypeName()const;
 
 
 /// ///////////////////////////////////////////////////////////////////////////////

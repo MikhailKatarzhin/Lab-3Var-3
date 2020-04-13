@@ -28,13 +28,13 @@ public:
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженые операторы
 
-    bool operator   ==  ( const Aeroplane &aeroplane );
-    bool operator   !=  ( const Aeroplane &aeroplane );
-    bool operator   >   ( const Aeroplane &aeroplane );
-    bool operator   <   ( const Aeroplane &aeroplane );
-    bool operator   <=  ( const Aeroplane &aeroplane );
-    bool operator   >=  ( const Aeroplane &aeroplane );
-    Aeroplane& operator =   ( const Aeroplane &aeroplane );
+    bool operator ==    ( const Aeroplane &aeroplane );
+    bool operator !=    ( const Aeroplane &aeroplane );
+    bool operator >     ( const Aeroplane &aeroplane );
+    bool operator <     ( const Aeroplane &aeroplane );
+    bool operator <=    ( const Aeroplane &aeroplane );
+    bool operator >=    ( const Aeroplane &aeroplane );
+    Aeroplane& operator = ( const Aeroplane &aeroplane );
     friend std::ostream& operator << ( std::ostream &out, const Aeroplane &aeroplane );
     friend std::istream& operator >> ( std::istream &in, Aeroplane &aeroplane );
 

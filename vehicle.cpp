@@ -53,6 +53,19 @@
     }
 
 
+    void Vehicle::print() const
+    {
+       std::cout <<
+                "\t|| Type Vehicle: "   << this->type <<
+                "\t|| Model: "          << this->model <<
+                "\t|| Speed: "          << this->movementSpeed <<
+                std::endl   <<
+                "\t|| Places count: "   << this->placeCount <<
+                "\t|| Color: "           << this->color <<
+                "\t||"
+                ;
+    }
+
 
     void Vehicle::setModel( std::string const &model )
     {
@@ -137,6 +150,40 @@
     {
         return type;
     }
+    std::string Vehicle::getVehicleTypeName() const
+    {
+        switch( type )
+        {
+            case UNKNOWN    :
+                {
+                    std::string tmp = "UNKNOWN";
+                    return tmp;
+                }
+            case CAR        :
+                {
+                    std::string tmp = "CAR";
+                    return tmp;
+                }
+            case AUTOBUS    :
+                {
+                    std::string tmp = "AUTOBUS";
+                    return tmp;
+                }
+            case AEROPLANE  :
+                {
+                    std::string tmp = "AEROPLANE";
+                    return tmp;
+                }
+            case STEAMBOAT  :
+                {
+                    std::string tmp = "STEAMBOAT";
+                    return tmp;
+                }
+        }
+        std::string tmp = "UNKNOWN";
+        return tmp;
+    }
+
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженные операторы
