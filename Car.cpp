@@ -1,4 +1,5 @@
 #include "Car.h"
+#include <string>
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Конструкторы
@@ -10,17 +11,17 @@ Car::Car() : Wheeled_vehicle()
 }
 ///Конструктор с параметрами
 Car::Car(
-         std::string const &brandname,
-         std::string const &model,
-         std::string const &color,
-         int const movementSpeed,
-         int const placeCount
+         std::string const  &brandname,
+         std::string const  &model,
+         std::string const  &color,
+         int const          movementSpeed,
+         int const          placeCount
          ) : Wheeled_vehicle( brandname, model, color, movementSpeed, placeCount )
 {
     type = CAR;
 }
 ///Конструктор копирования
-Car::Car(Car const &otherCar) : Wheeled_vehicle( otherCar )
+Car::Car( Car const &otherCar ) : Wheeled_vehicle( otherCar )
 {
     type = CAR;
 }
@@ -28,7 +29,7 @@ Car::Car(Car const &otherCar) : Wheeled_vehicle( otherCar )
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Методы
 
-void Car::showMenuActions() ///вывод на экран меню выбора действий с объектом Car
+void Car::showMenuActions()
 {
     std::cout << "\n\t\t\t***Menu***\n";
     std::cout << "\t0)Menu up\n";
@@ -50,24 +51,25 @@ void Car::showMenuActions() ///вывод на экран меню выбора 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Функции
 
-void showAllCars( short countOfCar, Car const * const cars )    ///вывод на экран всего списка существующих объектов Car
+void showAllCars( short countOfCar, Car const * const cars )
 {
-    for (short i = 0; i < countOfCar; i++)
+    for ( short i = 0; i < countOfCar; i++ )
     {
         std::cout << "\n" << i+1 << ")";
         cars[i].print();
     }
 }
 
-short requestNumberOfCar( short const countOfCar )  ///Запрос ввода нового числа объектов Car с проверкой
+short requestNumberOfCar( short const countOfCar )
 {
-    short i;
-    do{
-        std::cout << "\n\nEntry number of car(to " << countOfCar << ") or close program(input 0)\n";
+    short i = -1;
+    while( ( i < 0 )||( i > countOfCar ) )
+    {
+        std::cout << "\n\nEntry number of car( to " << countOfCar << " ) or close program( input 0 )\n";
         std::string buffer;
         std::cin >> buffer;
-        std::istringstream bufferStream(buffer);
+        std::istringstream bufferStream( buffer );
         bufferStream >> i;
-    }while( ( i < 0 )||( i > countOfCar ) );
+    };
     return i;
 }

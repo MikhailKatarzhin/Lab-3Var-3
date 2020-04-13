@@ -12,24 +12,24 @@
     }
 
     Vehicle::Vehicle(
-            std::string const &model,
-            std::string const &color,
-            int const movementSpeed,
-            int const placeCount
+            std::string const   &model,
+            std::string const   &color,
+            int const           movementSpeed,
+            int const           placeCount
             )
 {
-    this -> model = model;
-    this -> color = color;
-    this -> movementSpeed = movementSpeed;
-    this -> placeCount = placeCount;
+    this->model         = model;
+    this->color         = color;
+    this->movementSpeed = movementSpeed;
+    this->placeCount    = placeCount;
 }
 
     Vehicle::Vehicle( Vehicle const &vehicle )
     {
-        this -> model = vehicle.model;
-        this -> color = vehicle.color;
-        this -> movementSpeed = vehicle.movementSpeed;
-        this -> placeCount = vehicle.placeCount;
+        this->model         = vehicle.model;
+        this->color         = vehicle.color;
+        this->movementSpeed = vehicle.movementSpeed;
+        this->placeCount    = vehicle.placeCount;
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////
@@ -37,94 +37,97 @@
 
     void Vehicle::setModelDefault()
     {
-        this->model = "Model#0";
+        this->model         = "Model#0";
     }
     void Vehicle::setColorDefault()
     {
-        this->color = "UNKNOWN";
+        this->color         = "UNKNOWN";
     }
     void Vehicle::setPlaceCountDefault()
     {
-        this->placeCount = 1;
+        this->placeCount    = 1;
     }
     void Vehicle::setMovementSpeedDefault()
     {
         this->movementSpeed = 0;
     }
 
+
+
     void Vehicle::setModel( std::string const &model )
     {
-        this -> model = model;
+        this->model         = model;
     }
-    std::string& Vehicle::getModel()
+    std::string Vehicle::getModel() const
     {
         return model;
     }
 
+
+
     void Vehicle::setColor( std::string const &color )
     {
-        this -> color = color;
+        this->color = color;
     }
-
-    std::string& Vehicle::getColor()
+    std::string Vehicle::getColor() const
     {
         return color;
     }
 
+
+
     void Vehicle::setMovementSpeed( int const movementSpeed )
     {
-        this -> movementSpeed = (int)movementSpeed;
+        this->movementSpeed = (int)movementSpeed;
     }
     void Vehicle::setMovementSpeed( short int const movementSpeed )
     {
-        this -> movementSpeed = (int)movementSpeed;
+        this->movementSpeed = (int)movementSpeed;
     }
     void Vehicle::setMovementSpeed( unsigned int const movementSpeed )
     {
-        this -> movementSpeed = (int)movementSpeed;
+        this->movementSpeed = (int)movementSpeed;
     }
     void Vehicle::setMovementSpeed( unsigned short int const movementSpeed )
     {
-        this -> movementSpeed = (int)movementSpeed;
+        this->movementSpeed = (int)movementSpeed;
     }
     void Vehicle::setMovementSpeed( std::string const &movementSpeed )
     {
-        int tmpSpeed;
         std::istringstream bufferStream(movementSpeed);
-        bufferStream >> tmpSpeed;
-        this -> movementSpeed = tmpSpeed;
+        bufferStream >> this->movementSpeed;
     }
-
     int Vehicle::getMovementSpeed() const
     {
         return movementSpeed;
     }
 
+
+
     void Vehicle::setPlaceCount( int const placeCount )
     {
-        this -> placeCount = (unsigned int)placeCount;
+        this->placeCount = (unsigned int)placeCount;
     }
     void Vehicle::setPlaceCount( short int const placeCount )
     {
-        this -> placeCount = (unsigned int)placeCount;
+        this->placeCount = (unsigned int)placeCount;
     }
     void Vehicle::setPlaceCount( unsigned int const placeCount )
     {
-        this -> placeCount = (unsigned int)placeCount;
+        this->placeCount = (unsigned int)placeCount;
     }
     void Vehicle::setPlaceCount( unsigned short int const placeCount )
     {
-        this -> placeCount = (unsigned int)placeCount;
+        this->placeCount = (unsigned int)placeCount;
     }
     void Vehicle::setPlaceCount( std::string const &placeCount )
     {
-        unsigned int tmpPlaceCount;
-        std::istringstream bufferStream( placeCount);
+        int tmpPlaceCount;
+        std::istringstream bufferStream( placeCount );
         bufferStream >> tmpPlaceCount;
-        this -> placeCount = tmpPlaceCount;
+        if( tmpPlaceCount >= 1 )
+        this->placeCount = (unsigned int)tmpPlaceCount;
     }
-
-
     unsigned int Vehicle::getPlaceCount() const
     {
         return placeCount;
@@ -169,16 +172,16 @@
     void changeMovementSpeed( Vehicle &vehicle )
     {
         short   tmpSpeed;
-        while(1)
+        while( true )
         {
-            std::cout << "\nEntry speed of vehicle(more than 0):\t";
+            std::cout   << "\nEntry speed of vehicle( more than 0 ):\t";
             std::string buffer;
-            std::cin >> buffer;
-            std::istringstream bufferStream(buffer);
+            std::cin    >> buffer;
+            std::istringstream bufferStream( buffer );
             bufferStream >> tmpSpeed;
             if ( tmpSpeed > 0 )
             {
-                vehicle.setMovementSpeed(tmpSpeed);
+                vehicle.setMovementSpeed( tmpSpeed );
                 break;
             }else{
                 std::cout << "\nInvalid input, repeat...\n";
@@ -189,16 +192,16 @@
     void changePlaceCount( Vehicle &vehicle )
     {
         short   tmpPlaceCount;
-        while(1)
+        while( true )
         {
-            std::cout << "\nEntry place count of vehicle(more than 0):\t";
+            std::cout   << "\nEntry place count of vehicle( more than 0 ):\t";
             std::string buffer;
-            std::cin >> buffer;
-            std::istringstream bufferStream(buffer);
+            std::cin    >> buffer;
+            std::istringstream bufferStream( buffer );
             bufferStream >> tmpPlaceCount;
             if ( tmpPlaceCount > 0 )
             {
-                vehicle.setPlaceCount(tmpPlaceCount);
+                vehicle.setPlaceCount( tmpPlaceCount );
                 break;
             }else{
                 std::cout << "\nInvalid input, repeat...\n";
@@ -209,15 +212,15 @@
     void changeModel( Vehicle &vehicle )  ///Функция для изменения поля Model для указанного объекта Vehicle
     {
         std::string tmpModel;
-        std::cout << "\nEntry model of vehicle:\t";
-        std::cin >> tmpModel;
+        std::cout   << "\nEntry model of vehicle:\t";
+        std::cin    >> tmpModel;
         vehicle.setModel( tmpModel );
     }
 
     void changeColor( Vehicle &vehicle )
     {
-        std::cout << "\nEntry the color of the car:\t";
+        std::cout   << "\nEntry the color of the car:\t";
         std::string tmpColor;
-        std::cin >> tmpColor;
+        std::cin    >> tmpColor;
         vehicle.setColor( tmpColor );
     }

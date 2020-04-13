@@ -1,14 +1,15 @@
 #include <iostream>
-#include <stdio.h>
-#include <string>
 #include <string.h>
 #include <stdlib.h>
+
 #include "vehicle.h"
-#include "wheeled_vehicle.h"
-#include "Car.h"
-#include "autobus.h"
+
 #include "aeroplane.h"
 #include "steamboat.h"
+#include "wheeled_vehicle.h"
+
+#include "autobus.h"
+#include "Car.h"
 
 #define min(left, right) (left < right ? left : right)
 #define max(left, right) (left > right ? left : right)
