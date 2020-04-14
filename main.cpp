@@ -11,9 +11,6 @@
 #include "autobus.h"
 #include "Car.h"
 
-#define min(left, right) (left < right ? left : right)
-#define max(left, right) (left > right ? left : right)
-
 int main()
 {
     short   nCars = 1;
@@ -34,4 +31,11 @@ int main()
     std::cout << std::endl<< std::endl;
     vehicles[STEAMBOAT][0].print();
     std::cout << std::endl<< std::endl;
+
+    std::cout << "SModel:\t" << vehicles[STEAMBOAT][0].getModel() << std::endl;
+    std::cout << "SColor:\t" << vehicles[STEAMBOAT][0].getColor() << std::endl;
+    std::cout << "SMovementSpeed:\t" << vehicles[STEAMBOAT][0].getMovementSpeed() << std::endl;
+    std::cout << "SPlaceCount:\t" << vehicles[STEAMBOAT][0].getPlaceCount() << std::endl;
+    std::cout << "STonnage:\t" << ((Steamboat*) &(vehicles[STEAMBOAT][0]))->getTonnage() << std::endl;
+    std::cout << "AeFlight_Hours:\t" << ((Aeroplane*) &(vehicles[AEROPLANE][0]))->getFlight_Hours() << std::endl;
 }

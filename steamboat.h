@@ -23,7 +23,7 @@ public:
     void    print() const;
     void    showMenuActions() const;
     void    setTonnage( int const tonnage_in );
-    int     getTonnage();
+    int     getTonnage() const;
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженые операторы

@@ -20,14 +20,14 @@
                          ) : Vehicle( model, color, movementSpeed, placeCount )
     {
         type = AEROPLANE;
-        this->flight_hours = flight_hours;
+        setFlight_Hours( flight_hours );
     }
 
     Aeroplane::Aeroplane( Aeroplane const &aeroplane ) :
         Vehicle( aeroplane )
     {
         type = AEROPLANE;
-        this->flight_hours = aeroplane.flight_hours;
+        setFlight_Hours( aeroplane.flight_hours );
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////
@@ -65,6 +65,11 @@
     {
         return flight_hours;
     }
+
+//    int Aeroplane::getTonnage() const
+//    {
+//        return 0;
+//    }
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженые операторы

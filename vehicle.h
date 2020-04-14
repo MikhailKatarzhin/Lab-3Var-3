@@ -41,6 +41,8 @@ public:
     void    virtual print() const;
     void    virtual showMenuActions() const = 0;
 
+//    int     virtual getTonnage() const = 0;
+
 
     void        setModel( std::string const &model_in );
     std::string getModel() const;

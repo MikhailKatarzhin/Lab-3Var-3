@@ -26,7 +26,7 @@
     Steamboat::Steamboat( Steamboat const &otherSteamboat ) : Vehicle( otherSteamboat )
     {
         type = STEAMBOAT;
-        this->tonnage = otherSteamboat.tonnage;
+        setTonnage( otherSteamboat.tonnage );
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////
@@ -55,12 +55,12 @@
     std::cout << "\t9)Battle between aeroplanes!!!\n";
 }
 
-    void Steamboat::setTonnage( int const tonnage_in )
+    void Steamboat::setTonnage( int const tonnage )
     {
-        this->tonnage = tonnage_in;
+        this->tonnage = tonnage;
     }
 
-    int Steamboat::getTonnage()
+    int Steamboat::getTonnage() const
     {
         return tonnage;
     }

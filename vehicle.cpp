@@ -17,19 +17,19 @@
             int const           movementSpeed,
             int const           placeCount
             )
-{
-    this->model         = model;
-    this->color         = color;
-    this->movementSpeed = movementSpeed;
-    this->placeCount    = placeCount;
-}
+    {
+        setModel        ( model );
+        setColor        ( color );
+        setMovementSpeed( movementSpeed );
+        setPlaceCount   ( placeCount );
+    }
 
     Vehicle::Vehicle( Vehicle const &vehicle )
     {
-        this->model         = vehicle.model;
-        this->color         = vehicle.color;
-        this->movementSpeed = vehicle.movementSpeed;
-        this->placeCount    = vehicle.placeCount;
+        setModel        ( vehicle.model );
+        setColor        ( vehicle.color );
+        setMovementSpeed( vehicle.movementSpeed );
+        setPlaceCount   ( vehicle.placeCount );
     }
 
 /// ///////////////////////////////////////////////////////////////////////////////

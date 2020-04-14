@@ -16,12 +16,12 @@
                 int const           placeCount
                 ) : Vehicle( model, color, movementSpeed, placeCount )
     {
-        this->brandname = brandname;
+        setBrandname( brandname );
     }
 
     Wheeled_vehicle::Wheeled_vehicle( Wheeled_vehicle const &wheeled_vehicle ) : Vehicle( wheeled_vehicle )
     {
-        this->brandname = wheeled_vehicle.brandname;
+        setBrandname( wheeled_vehicle.brandname );
     }
 
 
@@ -52,6 +52,11 @@
     {
         return brandname;
     }
+
+//    int Wheeled_vehicle::getTonnage() const
+//    {
+//        return 0;
+//    }
 
 /// ///////////////////////////////////////////////////////////////////////////////
 /// Перегруженые операторы
