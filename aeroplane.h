@@ -42,5 +42,4 @@ protected:
     int flight_hours;
 
 private:
-//    int getTonnage() const override;
 };

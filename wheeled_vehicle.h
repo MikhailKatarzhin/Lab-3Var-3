@@ -48,5 +48,4 @@ protected:
     std::string brandname;
 
 private:
-//    int getTonnage() const override;
 };
